@@ -15,29 +15,29 @@ public class JumpingPlayer : MonoBehaviour
     }
     
     void Update() {
+		
+		if(onGround){
 
-        if (onGround) {
+			if ( Input.GetButtonDown("Jump")) {
 
-            if (Input.GetButtonDown("Jump"))
-            {
-                //if (rb.velocity.y < 0)
-                //{
-                //    //rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-                //    rb.velocity = Vector3.up * 10 * (fallMultiplier - 1) * Time.deltaTime;
-                //    Debug.Log("1");
-                //}
-                //else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
-                //{
-                //   // rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-                //    rb.velocity = Vector3.up * 10 * (lowJumpMultiplier - 1) * Time.deltaTime;
-                //    Debug.Log("2");
-                //}
+				//if (rb.velocity.y < 0)
+				//{
+				//    //rb.velocity += vector3.up * physics.gravity.y * (fallmultiplier - 1) * time.deltatime;
+				//    rb.velocity = vector3.up * 10 * (fallmultiplier - 1) * time.deltatime;
+				//    debug.log("1");
+				//}
+				//else if (rb.velocity.y > 0 && !input.getbutton("jump"))
+				//{
+				//   // rb.velocity += vector3.up * physics.gravity.y * (lowjumpmultiplier - 1) * time.deltatime;
+				//    rb.velocity = vector3.up * 10 * (lowjumpmultiplier - 1) * time.deltatime;
+				//    debug.log("2");
+				//}
 
-                rb.velocity += new Vector3(0, 10, 0) * (lowJumpMultiplier - 1); // * Physics.gravity.y;
-                onGround = false;
-
-            }
-        }
+				rb.velocity += new Vector3(0,10,0) * (lowJumpMultiplier -1) ; //* Physics.gravity.y;
+				onGround = false;
+				
+			}
+		}
         
     }
     void OnCollisionEnter (Collision other) { 
