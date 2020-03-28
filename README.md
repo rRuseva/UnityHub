@@ -1,2 +1,2 @@
 # UnityHub
-Projects for university university course for game development. 
+Projects for university course for game development. 
