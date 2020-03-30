@@ -14,9 +14,11 @@ public class PlayerController : MonoBehaviour {
 	
 	Quaternion targetRotation;
 	Transform cam;
+	Rigidbody rb;
 	
 	void Start(){
 		cam = Camera.main.transform; 
+        rb = GetComponent<Rigidbody>(); 
 	}
  
     void Update() {
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour {
 		
 	}
 	
+	//direction relative to camera's rotation
 	void CalculateDirection() {
 		angle = Mathf.Atan2(input.x, input.y);
 		angle = Mathf.Rad2Deg * angle;
@@ -51,7 +54,9 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	void Move() {
-		transform.position += transform.forward * velocity * Time.deltaTime;
+		//transform.position += transform.forward * velocity * Time.deltaTime;
+		
+		rb.MovePosition(transform.position + transform.forward*velocity*Time.deltaTime);
 	}
 
 }

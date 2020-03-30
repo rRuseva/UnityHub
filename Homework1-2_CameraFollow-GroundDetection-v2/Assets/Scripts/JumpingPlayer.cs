@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JumpingPlayer : MonoBehaviour
 {
-    public float fallMultiplier = 2.5f;
+    public float fallMultiplier = -2.5f;
     public float lowJumpMultiplier = 2f;
     public bool onGround = true;
 	public bool jumpRequest = false;
@@ -26,6 +26,7 @@ public class JumpingPlayer : MonoBehaviour
     }
 	void FixedUpdate(){
 		if(jumpRequest){
+			
 			rb.AddForce (Vector3.up * jumpVelocity, ForceMode.Impulse); 
 			
 			if (rb.velocity.y <= 0) {

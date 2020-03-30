@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2654963551741382915, guid: 24ea7bed57b9efb40b7ff705ee725cac,
+        type: 3}
+      propertyPath: fallMultiplier
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2654963551741382918, guid: 24ea7bed57b9efb40b7ff705ee725cac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -753,7 +758,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 300, y: 1.5, z: 133}
+  m_LocalPosition: {x: 304.02, y: 1.5, z: 222.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -772,7 +777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 693135654}
-  cameraOffset: {x: 0, y: 5, z: -10}
+  cameraOffset: {x: 0, y: 4, z: -15}
   moveSpeed: 5
   turnSpeed: 10
   smoothSpeed: 0.5
@@ -993,7 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3693a378d55ddb42b6ed519da3e9860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallMultiplier: 2.5
+  fallMultiplier: 3
   lowJumpMultiplier: 2
   onGround: 1
   jumpRequest: 0
