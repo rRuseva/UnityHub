@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 2654963551741382915, guid: 24ea7bed57b9efb40b7ff705ee725cac,
         type: 3}
       propertyPath: fallMultiplier
-      value: 0.1
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 2654963551741382918, guid: 24ea7bed57b9efb40b7ff705ee725cac,
         type: 3}
@@ -195,6 +195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2654963551741382913, guid: 24ea7bed57b9efb40b7ff705ee725cac, type: 3}
+    - {fileID: 2654963551741382915, guid: 24ea7bed57b9efb40b7ff705ee725cac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 24ea7bed57b9efb40b7ff705ee725cac, type: 3}
 --- !u!1001 &508197705
 PrefabInstance:
@@ -297,6 +298,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055875761932070804, guid: a320ef9b5bc0134439acc67bc64be833,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a320ef9b5bc0134439acc67bc64be833, type: 3}
@@ -420,6 +426,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 31142545}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &693135655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693135647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f12027d93e2bdd4fbef656f2e45c54c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 5
+  jumpForce: 5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +557,7 @@ PrefabInstance:
     - target: {fileID: 8723913328104106311, guid: a320ef9b5bc0134439acc67bc64be833,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8723913328104106311, guid: a320ef9b5bc0134439acc67bc64be833,
         type: 3}
@@ -547,7 +567,7 @@ PrefabInstance:
     - target: {fileID: 8723913328104106311, guid: a320ef9b5bc0134439acc67bc64be833,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8723913328104106311, guid: a320ef9b5bc0134439acc67bc64be833,
         type: 3}
@@ -593,6 +613,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055875761932070804, guid: a320ef9b5bc0134439acc67bc64be833,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a320ef9b5bc0134439acc67bc64be833, type: 3}
@@ -677,6 +702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055875761932070804, guid: a320ef9b5bc0134439acc67bc64be833,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a320ef9b5bc0134439acc67bc64be833, type: 3}
@@ -796,7 +826,7 @@ PrefabInstance:
     - target: {fileID: 8723913328104106311, guid: a320ef9b5bc0134439acc67bc64be833,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.56
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8723913328104106311, guid: a320ef9b5bc0134439acc67bc64be833,
         type: 3}
@@ -816,12 +846,12 @@ PrefabInstance:
     - target: {fileID: 8723913328104106311, guid: a320ef9b5bc0134439acc67bc64be833,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.25564197
+      value: -0.2263994
       objectReference: {fileID: 0}
     - target: {fileID: 8723913328104106311, guid: a320ef9b5bc0134439acc67bc64be833,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9667716
+      value: 0.9740346
       objectReference: {fileID: 0}
     - target: {fileID: 8723913328104106311, guid: a320ef9b5bc0134439acc67bc64be833,
         type: 3}
@@ -841,7 +871,7 @@ PrefabInstance:
     - target: {fileID: 8723913328104106311, guid: a320ef9b5bc0134439acc67bc64be833,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -29.623001
+      value: -26.170002
       objectReference: {fileID: 0}
     - target: {fileID: 8723913328104106311, guid: a320ef9b5bc0134439acc67bc64be833,
         type: 3}
@@ -857,6 +887,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055875761932070804, guid: a320ef9b5bc0134439acc67bc64be833,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a320ef9b5bc0134439acc67bc64be833, type: 3}
@@ -966,10 +1001,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1580013031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c155f81708ab40e43b5280fd5106eab5, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f12027d93e2bdd4fbef656f2e45c54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  force: 5
+  jumpForce: 3
 --- !u!54 &1580013037
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -995,14 +1031,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1580013031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3693a378d55ddb42b6ed519da3e9860, type: 3}
+  m_Script: {fileID: 11500000, guid: b17ebb8eae423b149ab85ac26127b976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallMultiplier: 3
-  lowJumpMultiplier: 2
-  onGround: 1
-  jumpRequest: 0
-  jumpVelocity: 13
+  moveSpeed: 13
+  turnSpeed: 10
+  velocity: 5
 --- !u!1 &1689730746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,6 +1199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055875761932070804, guid: a320ef9b5bc0134439acc67bc64be833,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a320ef9b5bc0134439acc67bc64be833, type: 3}
