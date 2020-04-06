@@ -62,6 +62,9 @@ TextureImporter:
   - first:
       213: -2693806779024366218
     second: Mario Big Sprite Sheet_9
+  - first:
+      213: -6927899167946232865
+    second: Mario Big Sprite Sheet_10
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -91,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -189,8 +192,8 @@ TextureImporter:
         y: 33
         width: 16
         height: 32
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,12 +209,12 @@ TextureImporter:
       name: Mario Big Sprite Sheet_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 17
         y: 33
         width: 16
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -227,12 +230,12 @@ TextureImporter:
       name: Mario Big Sprite Sheet_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 34
         y: 33
         width: 16
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -248,12 +251,12 @@ TextureImporter:
       name: Mario Big Sprite Sheet_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 51
         y: 33
         width: 16
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -269,12 +272,12 @@ TextureImporter:
       name: Mario Big Sprite Sheet_4
       rect:
         serializedVersion: 2
-        x: 64
+        x: 69
         y: 33
         width: 16
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -294,8 +297,8 @@ TextureImporter:
         y: 0
         width: 16
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -311,12 +314,12 @@ TextureImporter:
       name: Mario Big Sprite Sheet_6
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1
+        x: 17
+        y: 0
         width: 16
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -332,12 +335,12 @@ TextureImporter:
       name: Mario Big Sprite Sheet_7
       rect:
         serializedVersion: 2
-        x: 32
+        x: 34
         y: 1
         width: 16
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -353,12 +356,12 @@ TextureImporter:
       name: Mario Big Sprite Sheet_8
       rect:
         serializedVersion: 2
-        x: 48
+        x: 51
         y: 1
         width: 16
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -374,12 +377,12 @@ TextureImporter:
       name: Mario Big Sprite Sheet_9
       rect:
         serializedVersion: 2
-        x: 64
+        x: 69
         y: 1
         width: 16
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -387,6 +390,27 @@ TextureImporter:
       bones: []
       spriteID: ad5bfb071568f1442a175288db8bed86
       internalID: 4665819710008019946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mario Big Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 53
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb27de89682bdf90800000000000000
+      internalID: -6927899167946232865
       vertices: []
       indices: 
       edges: []
