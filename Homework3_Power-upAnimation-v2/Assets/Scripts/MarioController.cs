@@ -17,7 +17,8 @@ public class MarioController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //if (!isSmall)
+        //    isGrowing = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -26,8 +27,10 @@ public class MarioController : MonoBehaviour
             Debug.Log("hit mushroom");
             lookingForMushroom = true;
             animator.SetBool("LookingForMushroom", true);
+            isGrowing = false;
+            animator.SetBool("IsGrowing", false);
         }
-        if (collision.gameObject.CompareTag("Mushroom") && lookingForMushroom) {
+        else if (collision.gameObject.CompareTag("Mushroom") && lookingForMushroom) {
             Debug.Log("hit looking mushroom");
             lookingForMushroom = false;
             animator.SetBool("LookingForMushroom", false);

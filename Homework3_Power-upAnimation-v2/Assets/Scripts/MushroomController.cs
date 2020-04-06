@@ -22,7 +22,7 @@ public class MushroomController : MonoBehaviour
     void Update() {
         if (isHit) {
             //animator.enabled = true;
-            boxColl.enabled = false;
+            //boxColl.enabled = false;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision) {

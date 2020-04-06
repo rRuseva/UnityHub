@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 742160824}
   - component: {fileID: 742160822}
   - component: {fileID: 742160821}
+  - component: {fileID: 742160828}
   - component: {fileID: 742160823}
   - component: {fileID: 742160827}
   m_Layer: 0
@@ -350,7 +351,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0040600263, y: 0.09992082}
+  m_Offset: {x: -0.0040600263, y: 0.06419144}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -361,7 +362,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 0.087132454, y: 0.19512586}
+  m_Size: {x: 0.087132454, y: 0.123667106}
   m_EdgeRadius: 0
 --- !u!50 &742160822
 Rigidbody2D:
@@ -499,6 +500,22 @@ MonoBehaviour:
   isSmall: 1
   isGrowing: 0
   lookingForMushroom: 0
+--- !u!58 &742160828
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742160820}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.001334548, y: 0.15425575}
+  serializedVersion: 2
+  m_Radius: 0.044409633
 --- !u!1001 &933859687
 PrefabInstance:
   m_ObjectHideFlags: 0
