@@ -13,7 +13,7 @@ public class MushroomController : MonoBehaviour
     void Start() {
         animator = GetComponent<Animator>();
        // animator.enabled = true;
-        animator.SetBool("isActivated", false);
+        animator.SetBool("IsActivated", false);
     }
 
     // Update is called once per frame

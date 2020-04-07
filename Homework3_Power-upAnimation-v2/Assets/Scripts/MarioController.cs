@@ -38,7 +38,7 @@ public class MarioController : MonoBehaviour
             isGrowing = true;
             animator.SetBool("IsGrowing", true);
             isSmall = false;
-            animator.SetBool("IsSmall", true);
+            animator.SetBool("IsSmall", false);
         }
     }
         
