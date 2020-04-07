@@ -132,20 +132,20 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.6666667
         value: 1
-        inSlope: 2.456961
-        outSlope: 2.456961
+        inSlope: 0.06089395
+        outSlope: 0.06089395
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.49442324
+        outWeight: 0.15154447
       - serializedVersion: 3
         time: 2
         value: 0
-        inSlope: 3.9066198
-        outSlope: 3.9066198
+        inSlope: 0.9295614
+        outSlope: 0.9295614
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.3072578
+        inWeight: 0.114009894
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -393,20 +393,20 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.6666667
         value: 1
-        inSlope: 2.456961
-        outSlope: 2.456961
+        inSlope: 0.06089395
+        outSlope: 0.06089395
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.49442324
+        outWeight: 0.15154447
       - serializedVersion: 3
         time: 2
         value: 0
-        inSlope: 3.9066198
-        outSlope: 3.9066198
+        inSlope: 0.9295614
+        outSlope: 0.9295614
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.3072578
+        inWeight: 0.114009894
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -418,4 +418,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.6666667
+    functionName: ActivateMushroom
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

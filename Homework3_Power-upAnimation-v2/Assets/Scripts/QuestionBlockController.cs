@@ -6,16 +6,19 @@ public class QuestionBlockController : MonoBehaviour
 {
     [SerializeField] private bool isHit = false;
 
-    private Animator animator;
+    private Animator animator; 
     private new Rigidbody2D rigidbody;
-    private SpriteRenderer sprite; 
+    private SpriteRenderer sprite;
+    [SerializeField]  private GameObject mushroom;
+    private Animator mushroomAnimator;
     // Start is called before the first frame update
     void Start() {
         animator = GetComponent<Animator>();
+        mushroomAnimator = mushroom.GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-       // animator.enabled = false;
         animator.SetBool("IsHit", false);
+
     }
 
     // Update is called once per frame
@@ -23,7 +26,6 @@ public class QuestionBlockController : MonoBehaviour
     {
         if (isHit) {
             sprite.color = new Color(193, 193, 193);
-           // animator.enabled = true;
         }
     }
 
@@ -31,6 +33,17 @@ public class QuestionBlockController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) {
             isHit = true;
             animator.SetBool("IsHit", true);
+            ActivateMushroom();
+        }
+    }
+    void ActivateMushroom() { 
+        if (isHit) {
+          //  mushroomAnimator.enabled = true;
+            mushroomAnimator.SetBool("IsActivated", true);
+            mushroom.GetComponent<MushroomController>().isActivated = true;
+            //mushroomAnimator.SetBool("IsFalling", true);
+            //mushroom.GetComponent<MushroomController>().isFalling = true;
+
         }
     }
 }

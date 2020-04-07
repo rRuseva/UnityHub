@@ -4,31 +4,36 @@ using UnityEngine;
 
 public class MushroomController : MonoBehaviour
 {
-    [SerializeField] private bool isHit = false;
-
+    //[SerializeField] 
+    public bool isActivated = false;
+    //[SerializeField] 
+    public bool isFalling = false;
     private Animator animator;
-    private new Rigidbody2D rigidbody;
-    private BoxCollider2D boxColl;
     // Start is called before the first frame update
     void Start() {
         animator = GetComponent<Animator>();
-        rigidbody = GetComponent<Rigidbody2D>();
-        // animator.enabled = false;
-        //animator.SetBool("IsHit", false);
-        boxColl = GetComponent<BoxCollider2D>();
+       // animator.enabled = true;
+        animator.SetBool("isActivated", false);
     }
 
     // Update is called once per frame
     void Update() {
-        if (isHit) {
-            //animator.enabled = true;
-            //boxColl.enabled = false;
+        //if (isActivated) {
+        //    //animator.enabled = true;
+        //    isFalling = true;
+        //    animator.SetBool("IsFalling", true);
+        //}
+    }
+    void InitializeFall() {
+        if (isActivated) {
+            isFalling = true;
+            animator.SetBool("IsFalling", true);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Player")) {
-            isHit = true;
-            animator.SetBool("IsHit", true);
-        }
+        //if (collision.gameObject.CompareTag("Player")) {
+        //    isActivated = true;
+        //    animator.SetBool("isActivated", true);
+        //}
     }
 }
