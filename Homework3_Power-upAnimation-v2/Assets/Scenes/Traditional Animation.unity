@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  gravity: 1.03
+  gravity: 1.55
   jumpKey: 119
   crouchKey: 115
 --- !u!95 &742160824
@@ -504,8 +504,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSmall: 1
-  isGrowing: 0
-  lookingForMushroom: 0
 --- !u!58 &742160828
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -787,8 +785,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSmall: 1
-  isGrowing: 0
-  lookingForMushroom: 0
 --- !u!114 &940485942
 MonoBehaviour:
   m_ObjectHideFlags: 0
