@@ -5,9 +5,9 @@ using UnityEngine;
 public class MarioController : MonoBehaviour
 {
     [SerializeField] private bool isSmall = true;
-    [SerializeField] private bool isGrowing = false;
-    [SerializeField] private bool lookingForMushroom = false;
 
+    //[SerializeField] private bool isGrowing = false;
+    //[SerializeField] private bool lookingForMushroom = false;
 
     private Animator animator;
     // Start is called before the first frame update
@@ -16,10 +16,7 @@ public class MarioController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        //if (!isSmall)
-        //    isGrowing = false;
+    void Update() {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -28,15 +25,17 @@ public class MarioController : MonoBehaviour
             Debug.Log("hit mushroom");
             //lookingForMushroom = true;
             //animator.SetBool("LookingForMushroom", true);
-            isGrowing = false;
-            animator.SetBool("IsGrowing", false);
+
+            //isGrowing = false;
+            //animator.SetBool("IsGrowing", false);
         }
-        else if (collision.gameObject.CompareTag("Mushroom") && collision.gameObject.GetComponent<MushroomController>().isActivated) {
-            Debug.Log("hit looking mushroom");
+        else if (collision.gameObject.CompareTag("Mushroom") && collision.gameObject.GetComponent<MushroomController>().isFalling) {
+            Debug.Log("hit falling mushroom");
             //lookingForMushroom = false;
             //animator.SetBool("LookingForMushroom", false);
-            isGrowing = true;
-            animator.SetBool("IsGrowing", true);
+            //isGrowing = true;
+            //animator.SetBool("IsGrowing", true);
+
             isSmall = false;
             animator.SetBool("IsSmall", false);
         }
