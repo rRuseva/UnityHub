@@ -28,15 +28,15 @@ public class MarioController : MonoBehaviour
             Debug.Log("hit mushroom");
             //lookingForMushroom = true;
             //animator.SetBool("LookingForMushroom", true);
-            isGrowing = false;
-            animator.SetBool("IsGrowing", false);
+            //isGrowing = false;
+            //animator.SetBool("IsGrowing", false);
         }
         else if (collision.gameObject.CompareTag("Mushroom") && collision.gameObject.GetComponent<MushroomController>().isActivated) {
             Debug.Log("hit looking mushroom");
             //lookingForMushroom = false;
             //animator.SetBool("LookingForMushroom", false);
-            isGrowing = true;
-            animator.SetBool("IsGrowing", true);
+            //isGrowing = true;
+            //animator.SetBool("IsGrowing", true);
             isSmall = false;
             animator.SetBool("IsSmall", false);
         }
