@@ -16,10 +16,7 @@ public class MarioController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        //if (!isSmall)
-        //    isGrowing = false;
+    void Update() {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
