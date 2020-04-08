@@ -31,8 +31,8 @@ public class MarioController : MonoBehaviour
             //isGrowing = false;
             //animator.SetBool("IsGrowing", false);
         }
-        else if (collision.gameObject.CompareTag("Mushroom") && collision.gameObject.GetComponent<MushroomController>().isActivated) {
-            Debug.Log("hit looking mushroom");
+        else if (collision.gameObject.CompareTag("Mushroom") && collision.gameObject.GetComponent<MushroomController>().isFalling) {
+            Debug.Log("hit falling mushroom");
             //lookingForMushroom = false;
             //animator.SetBool("LookingForMushroom", false);
             //isGrowing = true;
