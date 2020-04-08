@@ -5,8 +5,8 @@ using UnityEngine;
 public class MarioController : MonoBehaviour
 {
     [SerializeField] private bool isSmall = true;
-    [SerializeField] private bool isGrowing = false;
-    [SerializeField] private bool lookingForMushroom = false;
+    //[SerializeField] private bool isGrowing = false;
+    //[SerializeField] private bool lookingForMushroom = false;
 
 
     private Animator animator;
