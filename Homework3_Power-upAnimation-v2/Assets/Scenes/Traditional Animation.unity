@@ -405,6 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   gravity: 1.55
+
   jumpKey: 119
   crouchKey: 115
 --- !u!95 &742160824
@@ -504,6 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSmall: 1
+
 --- !u!58 &742160828
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -921,6 +923,7 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+
     - target: {fileID: 5373569886674552176, guid: 108ec8198045f5542bac59f26778986b,
         type: 3}
       propertyPath: m_SortingOrder

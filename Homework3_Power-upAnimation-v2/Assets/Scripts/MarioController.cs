@@ -5,9 +5,9 @@ using UnityEngine;
 public class MarioController : MonoBehaviour
 {
     [SerializeField] private bool isSmall = true;
+
     //[SerializeField] private bool isGrowing = false;
     //[SerializeField] private bool lookingForMushroom = false;
-
 
     private Animator animator;
     // Start is called before the first frame update
@@ -25,6 +25,7 @@ public class MarioController : MonoBehaviour
             Debug.Log("hit mushroom");
             //lookingForMushroom = true;
             //animator.SetBool("LookingForMushroom", true);
+
             //isGrowing = false;
             //animator.SetBool("IsGrowing", false);
         }
@@ -34,6 +35,7 @@ public class MarioController : MonoBehaviour
             //animator.SetBool("LookingForMushroom", false);
             //isGrowing = true;
             //animator.SetBool("IsGrowing", true);
+
             isSmall = false;
             animator.SetBool("IsSmall", false);
         }
