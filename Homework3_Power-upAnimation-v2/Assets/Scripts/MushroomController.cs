@@ -10,20 +10,16 @@ public class MushroomController : MonoBehaviour
     bool fading = false;
     private Animator animator;
     private new BoxCollider2D boxCol;
-
     // Start is called before the first frame update
     void Start() {
         animator = GetComponent<Animator>();
        // animator.enabled = true;
         animator.SetBool("IsActivated", false);
-
         boxCol = GetComponent<BoxCollider2D>(); 
-
     }
 
     // Update is called once per frame
     void Update() {
-
     }
     void InitializeFall() {
         if (isActivated) {
@@ -43,6 +39,5 @@ public class MushroomController : MonoBehaviour
             //isActivated = false;
             Fade();
         }
-
     }
 }
