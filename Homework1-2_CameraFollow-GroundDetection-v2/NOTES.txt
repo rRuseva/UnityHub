@@ -1,0 +1,21 @@
+************************* NOTES ************************************
+
+Unity project 
+"Homework1-2_CameraFollow-GroundDetection-v2" 
+contains the solution to Homework 1 and Homework 2;
+
+C# scripts :
+-MovingPlayer.cs 
+-CameraController.cs 
+-- are first and basic solution to Task 1; 
+
+-PlayerController.cs 
+-CameraController2.cs 
+-- are different approach to solution of Task 1; It has more functionalities as rotating camera with 'G' and 'H' button when the player is not movingand smoothing the movment of camera.  
+
+
+- JumpingPlayer.cs
+-- contains the solution for Task 2; 
+
+**********************************************************************
+
