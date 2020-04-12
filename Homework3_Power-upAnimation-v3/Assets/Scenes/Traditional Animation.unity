@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e42e4f3524a4aa47aa26c6e4d09a4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSmall: 1
+  marioBig: {fileID: 9100000, guid: 1eae58dac4183d24bac43dd16c670570, type: 2}
 --- !u!58 &742160828
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -784,7 +784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e42e4f3524a4aa47aa26c6e4d09a4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSmall: 1
+  marioBig: {fileID: 0}
 --- !u!114 &940485942
 MonoBehaviour:
   m_ObjectHideFlags: 0
