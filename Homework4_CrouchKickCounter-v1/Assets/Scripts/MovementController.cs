@@ -69,6 +69,10 @@ public class MovementController : MonoBehaviour {
 		transform.localScale = new Vector3(Sign(direction), 1, 1);
 	}
 
+	public void Crouch() {
+		//do i do something on crouching?
+	}
+
 	private void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.gameObject.CompareTag("Ground")) {
 			IsAirborne = false;
