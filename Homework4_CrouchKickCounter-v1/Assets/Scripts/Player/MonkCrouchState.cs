@@ -1,23 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using static Controlls;
+using static StateMachineUtil;
 
 public class MonkCrouchState : StateMachineBehaviour {
     
     private MovementController movementController;
-
+    bool isCrouching;
+    bool isJumping;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        Debug.LogError("crouch enter");
+        isCrouching = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        if (Input.GetKeyDown(crouchKey)) {
-            animator.SetBool("IsCrouching", true);
-            Debug.LogError("s - is crouching");
+        isCrouching = Input.GetKeyDown(crouchKey);
+        isJumping = animator.GetBool("IsCrouching");
+        if (!isJumping) {
+            animator.SetBool("IsCrouching", isCrouching);
+            if (isCrouching) return;
         }
+        if (Input.GetKeyUp(crouchKey)) {
+            isCrouching = false;
+            animator.SetBool("IsCrouching", false);
+        }
+        if (Input.GetKeyDown(attackKey)) {
+            animator.SetBool("IsCrouchKicking", true);
+        }
+        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
