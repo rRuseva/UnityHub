@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 403624518}
   - component: {fileID: 403624519}
   m_Layer: 0
-  m_Name: Crouch Kick Hitbox (1)
+  m_Name: Crouch Kick Hitbox monk
   m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
