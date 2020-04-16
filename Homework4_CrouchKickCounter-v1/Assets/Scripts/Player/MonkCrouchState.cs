@@ -5,35 +5,26 @@ using static StateMachineUtil;
 public class MonkCrouchState : StateMachineBehaviour {
     
     private MovementController movementController;
-    bool isCrouching;
-    bool isJumping;
+    //bool isCrouching;
+    //bool isJumping;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        isCrouching = false;
+       // isCrouching = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        isCrouching = Input.GetKeyDown(crouchKey);
-        isJumping = animator.GetBool("IsCrouching");
-        if (!isJumping) {
-            animator.SetBool("IsCrouching", isCrouching);
-            if (isCrouching) return;
-        }
-        if (Input.GetKeyUp(crouchKey)) {
-            isCrouching = false;
-            animator.SetBool("IsCrouching", false);
-        }
+
         if (Input.GetKeyDown(attackKey)) {
             animator.SetBool("IsCrouchKicking", true);
-        }
-        
+        } 
+        else animator.SetBool("IsCrouching", false);
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+
     //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
