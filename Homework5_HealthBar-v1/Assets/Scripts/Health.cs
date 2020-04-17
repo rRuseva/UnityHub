@@ -9,8 +9,10 @@ public class Health : MonoBehaviour {
 	private Animator animator;
 	public GameObject cross;
 
+	public HealthBar healthBar;
 	void Start() {
 		animator = GetComponent<Animator>();
+		healthBar.SetMaxHealth(health);
 	}
 
 	public void SpawnCross() {
@@ -30,6 +32,8 @@ public class Health : MonoBehaviour {
 		health = Max(health - damage, 0);
 		animator.SetInteger("Health", health);
 		animator.SetTrigger("TookDamage");
+		healthBar.SetHealth(health);
+
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
