@@ -33,7 +33,7 @@ public class MonkCrouchKickingState : StateMachineBehaviour
     }
 
     private void ResetAnimationState() {
-        animator.SetBool("IsCrouching", false);
+       // animator.SetBool("IsCrouching", false);
         animator.SetBool("IsCrouchKicking", false);
 
     }

@@ -16,8 +16,10 @@ public class MonkCrouchState : StateMachineBehaviour {
 
         if (Input.GetKeyDown(attackKey)) {
             animator.SetBool("IsCrouchKicking", true);
-        } 
-        else animator.SetBool("IsCrouching", false);
+        }
+        else if (Input.GetKeyUp(crouchKey)) { 
+            animator.SetBool("IsCrouching", false); 
+        }
 
     }
 
