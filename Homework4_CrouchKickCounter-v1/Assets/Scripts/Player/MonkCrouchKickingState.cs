@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using static UnityEngine.Mathf;
+using static StateMachineUtil;
 
 public class MonkCrouchKickingState : StateMachineBehaviour
 {
@@ -7,18 +8,23 @@ public class MonkCrouchKickingState : StateMachineBehaviour
     private MovementController movementController;
     private GameObject hitbox;
 
+    [SerializeField]
+    [Range(0.1f, 2)]
+    private float delay = 0.3f;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         this.animator = animator;
         float kickDirection = Sign(animator.transform.localScale.x);
         hitbox = animator.transform.GetChild(2).gameObject;
         hitbox.SetActive(true);
+
+        DoWithDelay(delay, () => animator.SetBool("IsCrouchKicking", false));
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-
-    }
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

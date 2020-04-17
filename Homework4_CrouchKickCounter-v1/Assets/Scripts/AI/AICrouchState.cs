@@ -8,6 +8,9 @@ public class AICrouchState : StateMachineBehaviour
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        movementController = animator.GetComponent<MovementController>();
+        movementController.SetHorizontalMoveDirection(0);
+
         Transform player = GameObject.FindWithTag("Player").transform;
         float directionToPlayer = player.position.x - animator.transform.position.x;
         movementController.TurnTowards(directionToPlayer);
