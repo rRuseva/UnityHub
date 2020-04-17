@@ -13,7 +13,7 @@ public class AICrouchKickState : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         this.animator = animator;
         float kickDirection = Sign(animator.transform.localScale.x);
-        hitbox = animator.transform.GetChild(0).gameObject;
+        hitbox = animator.transform.GetChild(2).gameObject;
         hitbox.SetActive(true);
     }
 
@@ -24,9 +24,10 @@ public class AICrouchKickState : StateMachineBehaviour
     //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(animator animator, animatorstateinfo stateinfo, int layerindex) {
-    //    hitbox.SetActive(false);
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        hitbox.SetActive(false);
+    }
+
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
