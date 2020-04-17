@@ -1,29 +1,30 @@
-﻿using UnityEngine;
-using static Controlls;
-using static StateMachineUtil;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class MonkCrouchState : StateMachineBehaviour {
-    
+public class AICrouchState : StateMachineBehaviour
+{
     private MovementController movementController;
-    
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-       // isCrouching = false;
+        movementController = animator.GetComponent<MovementController>();
+        movementController.SetHorizontalMoveDirection(0);
+
+        Transform player = GameObject.FindWithTag("Player").transform;
+        float directionToPlayer = player.position.x - animator.transform.position.x;
+        movementController.TurnTowards(directionToPlayer);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-
-        if (Input.GetKeyDown(attackKey)) {
-            animator.SetBool("IsCrouchKicking", true);
-        } 
-        else animator.SetBool("IsCrouching", false);
-
+        animator.SetTrigger("ShouldCrouchKick");
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
     //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

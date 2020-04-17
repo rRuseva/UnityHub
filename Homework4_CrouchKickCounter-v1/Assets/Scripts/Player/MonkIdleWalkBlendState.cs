@@ -24,7 +24,8 @@ public class MonkIdleWalkBlendState : StateMachineBehaviour {
 		}
 		if (Input.GetKeyDown(crouchKey)) {
 			animator.SetBool("IsCrouching", true);
-			
-		}
+		}	
+		
+		
 	}
 }
