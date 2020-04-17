@@ -9,8 +9,8 @@ public class MonkCrouchKickingState : StateMachineBehaviour
     private GameObject hitbox;
 
     [SerializeField]
-    [Range(0.1f, 2)]
-    private float delay = 0.3f;
+    [Range(0.1f, 0.5f)]
+    private float delay = 0.2f;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
