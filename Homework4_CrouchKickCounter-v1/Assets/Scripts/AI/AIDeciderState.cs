@@ -23,7 +23,7 @@ public class AIDeciderState : StateMachineBehaviour {
 
 		if (distanceToPlayer < wantedDistanceToPlayer) {
 			//	Debug.LogError(distanceToPlayer);
-			if (player.GetChild(1).gameObject.activeSelf ){ //|| player.GetChild(0).gameObject.activeSelf) {
+			if(player.GetChild(1).gameObject.activeSelf ){ //|| player.GetChild(0).gameObject.activeSelf) {
 				//if (rand <= 1.0f)
 					{ animator.SetTrigger("ShouldDodge"); Debug.Log("dodge"); }
 			}
