@@ -7,6 +7,8 @@ public class AIDeciderState : StateMachineBehaviour {
 	[Range(0.1f, 0.4f)]
 	private float wantedDistanceToPlayer = 0.2f;
 
+	public int health;
+
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		float rand = Random.value;
 		GameObject playerGameObject = GameObject.FindWithTag("Player");
@@ -17,6 +19,7 @@ public class AIDeciderState : StateMachineBehaviour {
 			player = playerGameObject.transform;
 		}
 
+		health = animator.GetInteger("Health");
 		Vector3 vectorToPlayer = player.position - animator.transform.position;
 		float distanceToPlayer = vectorToPlayer.magnitude;
 
@@ -24,8 +27,10 @@ public class AIDeciderState : StateMachineBehaviour {
 		if (distanceToPlayer < wantedDistanceToPlayer) {
 			//	Debug.LogError(distanceToPlayer);
 			if(player.GetChild(1).gameObject.activeSelf ){ //|| player.GetChild(0).gameObject.activeSelf) {
-				if (rand <= 0.5f)
-					{ animator.SetTrigger("ShouldDodge"); Debug.Log("dodge"); }
+				if (rand <= 0.5f) { 
+					animator.SetTrigger("ShouldDodge"); 
+					//Debug.LogError("dodge " + health.ToString());  
+				}
 			}
 		}
 

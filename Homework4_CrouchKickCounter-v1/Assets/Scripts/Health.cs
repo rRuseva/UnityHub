@@ -9,8 +9,10 @@ public class Health : MonoBehaviour {
 	private Animator animator;
 	public GameObject cross;
 
+	AnimatorStateInfo animState;
 	void Start() {
 		animator = GetComponent<Animator>();
+
 	}
 
 	public void SpawnCross() {
@@ -27,16 +29,27 @@ public class Health : MonoBehaviour {
 
 	public void TakeDamage() {
 		int damage = 10;
+
 		health = Max(health - damage, 0);
 		animator.SetInteger("Health", health);
 		animator.SetTrigger("TookDamage");
-	}
 
+	}
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.transform.parent != transform
-			&& collision.gameObject.CompareTag("Hitbox")) {
+			&& collision.gameObject.CompareTag("Hitbox") ) {
 
-			TakeDamage();
+			animState = animator.GetCurrentAnimatorStateInfo(0);
+			//Debug.Log(animator.name.ToString());
+			if (!animState.IsTag("Dodge_state")) {
+			//	Debug.Log(animator.name + health.ToString() + "no dodge");
+				TakeDamage();
+			//	Debug.Log(animator.name + health.ToString());
+			}
+			//else Debug.Log("DODGE");
 		}
+	}
+	private void Update() {
+
 	}
 }

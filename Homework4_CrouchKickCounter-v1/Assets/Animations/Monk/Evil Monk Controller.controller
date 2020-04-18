@@ -296,7 +296,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: cf691b46ced1a624ba5178aa29329f09, type: 2}
-  m_Tag: 
+  m_Tag: Dodge_state
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -469,6 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wantedDistanceToPlayer: 0.2
+  health: 0
 --- !u!1102 &-2078874955788781969
 AnimatorState:
   serializedVersion: 5
@@ -492,7 +493,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 58cb7b02a95e96b41aeba0dc01bf2c86, type: 2}
-  m_Tag: 
+  m_Tag: Dodge_state
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
