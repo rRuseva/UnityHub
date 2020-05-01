@@ -9,10 +9,6 @@ public class PixelizationEffect : MonoBehaviour
     private Vector2 cellSize = new Vector2(4, 4);
     public Material pixelateEffectMaterial;
 
-    //private void Awake() {
-    //    //  pixelateEffectMaterial = new Material(Shader.Find("CustomShaders/PixelizationEffectShader"));
-    //}
-
     private void OnRenderImage(RenderTexture source, RenderTexture destination) {
 
         pixelateEffectMaterial.SetFloat("_ScreenWidth", Screen.width);
