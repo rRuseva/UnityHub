@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d30bed605cb73f42847691277a26c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellSize: {x: 8, y: 8}
+  cellSize: {x: 4, y: 4}
   pixelateEffectMaterial: {fileID: 1796141894}
 --- !u!20 &1248175506
 Camera:
@@ -537,8 +537,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _CellSizeX: 8
-    - _CellSizeY: 8
+    - _CellSizeX: 4
+    - _CellSizeY: 4
     - _Intensity: 2
     - _ScreenHeight: 418
     - _ScreenWidth: 581
