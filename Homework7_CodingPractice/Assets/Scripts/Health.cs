@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
         if (tempTime > sendRate) {
             TakeDamage();
             tempTime -= sendRate;
-            Debug.Log("health " + health + "; armor -" + armor);
+            Debug.LogError("health " + health + "; armor -" + armor);
         }
        // if(health == 0) { Die();  }
     }

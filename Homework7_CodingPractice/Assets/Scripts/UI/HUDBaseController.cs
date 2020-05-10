@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HUDBaseController : MonoBehaviour
 {
     [SerializeField] private WeaponController weaponController = null;
     [SerializeField] private Text ammoText = null;
+    [SerializeField] private TextMesh ammoTextRenderer = null;
     [SerializeField] private Health health = null;
     [SerializeField] private Text healthText = null;
     [SerializeField] private Text armorText = null;
@@ -20,6 +22,7 @@ public class HUDBaseController : MonoBehaviour
     }
     void Start() {
         ammoText.text = weaponController.getAmmo().ToString();
+        ammoTextRenderer.text = ammoText.text;
         healthText.text = health.getHealth().ToString();
         armorText.text = health.getArmor().ToString();
 
@@ -45,6 +48,7 @@ public class HUDBaseController : MonoBehaviour
 
     private void WeaponController_OnAmmoCountChange(int ammo) {
         ammoText.text = ammo.ToString();
+        ammoTextRenderer.text = ammo.ToString();
         //Debug.Log("OnAmmoChange " + ammo);
     }
     // Update is called once per frame
