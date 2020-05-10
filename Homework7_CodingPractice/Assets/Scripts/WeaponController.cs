@@ -2,6 +2,7 @@
 using UnityEngine;
 using static UnityEngine.Mathf;
 
+
 public class WeaponController : MonoBehaviour
 {
     public static readonly int maxAmmo = 9;
@@ -9,7 +10,6 @@ public class WeaponController : MonoBehaviour
     [SerializeField]
     private int heroAmmo = maxAmmo;
     private Animator animator;
-    private bool isFiring;
     private void Awake() {
         heroAmmo = maxAmmo;
     }
@@ -28,7 +28,7 @@ public class WeaponController : MonoBehaviour
     }
     // Start is called before the first frame update
     void Start() {
-        animator = WeaponController.FindObjectOfType<Animator>(); // GetComponent<Animator>();
+        animator = WeaponController.FindObjectOfType<Animator>(); 
     }
 
     // Update is called once per frame
@@ -36,18 +36,15 @@ public class WeaponController : MonoBehaviour
         if (Input.GetButtonDown("Fire1") || Input.GetMouseButtonDown(1)) {
             TryShoot();
         }
-        isFiring = false;
-        animator.SetBool("isFiring", isFiring);
+        
+
     }
 
     void TryShoot() {
         if (TakeAmmo()) {
-            // Debug.Log("TryToShoot");
-            isFiring = true;
-            animator.SetBool("isFiring", isFiring);
-            Debug.LogError("TryShoot - isFiring " + isFiring);
+            animator.SetTrigger("firing");
+          //  Debug.LogError("TryShoot - isFiring " );
         }
-        else isFiring = false;
     }
 
 
