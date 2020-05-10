@@ -55,7 +55,7 @@
             {
                 fixed4 color = tex2D(_MainTex, i.uv);
                 float t = length(i.uv - float2(0.5, 0.5)) * 1.41421356237; // 1.141... = sqrt(2)
-                float slide = lerp(_Slide, 0.9f, ((sin(_Time.z* _PulsRate) + 1) / 2.));
+                float slide = lerp(_Slide, 0.78f, ((sin(_Time.z* _PulsRate) + 1) / 2.));
                 color.rgba = color.rgba * lerp(_Color, _ColorB, t + (slide - 0.5) * 2);
                 
                 return color;
