@@ -5,16 +5,18 @@ using static UnityEngine.Mathf;
 
 public class WeaponController : MonoBehaviour
 {
-    public static readonly int maxAmmo = 9;
-
+    public static readonly int maxAmmo = 100;
+    
     [SerializeField]
     private int heroAmmo = maxAmmo;
-    private Animator animator;
+    private Animator weaponAnimator;
+    private Animator headAnimator;
     private void Awake() {
         heroAmmo = maxAmmo;
     }
 
     public event Action<int> OnAmmoCountChange;
+    public event Action OnStartShooting;
     public int getAmmo() {
         return heroAmmo;
     }
@@ -28,7 +30,8 @@ public class WeaponController : MonoBehaviour
     }
     // Start is called before the first frame update
     void Start() {
-        animator = WeaponController.FindObjectOfType<Animator>(); 
+        weaponAnimator = WeaponController.FindObjectOfType<Animator>();
+       // headAnimator = HeadController.FindObjectOfType<Animator>();
     }
 
     // Update is called once per frame
@@ -42,7 +45,8 @@ public class WeaponController : MonoBehaviour
 
     void TryShoot() {
         if (TakeAmmo()) {
-            animator.SetTrigger("firing");
+            weaponAnimator.SetTrigger("firing");
+            OnStartShooting?.Invoke();
           //  Debug.LogError("TryShoot - isFiring " );
         }
     }
