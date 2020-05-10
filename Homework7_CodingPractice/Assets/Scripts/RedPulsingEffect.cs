@@ -11,10 +11,10 @@ public class RedPulsingEffect : MonoBehaviour
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination) {
         //_ScreenParams
-        if (weaponController.getAmmo() <= 2) {
-            //redPulsingEffectMaterial.
+        if (weaponController.getAmmo() > 2) {
+            Graphics.Blit(source, destination);
+            return;
         }
-        else { }
 
         Graphics.Blit(source, destination, redPulsingEffectMaterial);
     }
