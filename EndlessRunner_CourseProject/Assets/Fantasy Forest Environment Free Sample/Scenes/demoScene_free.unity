@@ -873,7 +873,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 6073933f0960c014d829c19ab567c56a,
         type: 3}
       propertyPath: m_Name
-      value: Ch14_nonPBR@Running
+      value: Mousey
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6073933f0960c014d829c19ab567c56a, type: 3}
