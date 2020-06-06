@@ -1,0 +1,7 @@
+problems found:
+
+Z and Y coordinate are changing without a reason;
+On 'jump and roll' animation - the head is passing through the ground;
+afterthe jump  the  X coordinate is not updated properly; - the box collider and animation are not moving tohether duting the jump;
+
+Camera movement is not smooth;
