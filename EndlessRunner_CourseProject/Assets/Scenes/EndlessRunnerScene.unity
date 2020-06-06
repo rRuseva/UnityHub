@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 104748463}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -271,6 +271,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &491392601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 523046781784494052, guid: 492d072c832b1a4438308d2acda60663,
+    type: 3}
+  m_PrefabInstance: {fileID: 2129765217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &491392603
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491392601}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.1827551, z: 0.6418215}
+  m_Center: {x: -0.000000010278649, y: 0.2991805, z: -0.05177406}
 --- !u!1 &718917880
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +301,6 @@ GameObject:
   - component: {fileID: 718917883}
   - component: {fileID: 718917882}
   - component: {fileID: 718917881}
-  - component: {fileID: 718917884}
   - component: {fileID: 718917885}
   m_Layer: 0
   m_Name: Main Camera
@@ -356,23 +374,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 13.734, y: 90, z: 0}
---- !u!114 &718917884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718917880}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92cc9bf69a547eb408d59c656d83e2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1679962743}
-  cameraOffset: {x: 0, y: 0, z: 0}
-  moveSpeed: 5
-  turnSpeed: 10
-  smoothSpeed: 0.5
 --- !u!114 &718917885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,13 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runningForwardSpeed: 3
-  SINGLE_HORIZONTAL_MOVEMENT_DISTANCE: 50
---- !u!4 &1679962743 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6051707333760166198, guid: 492d072c832b1a4438308d2acda60663,
-    type: 3}
-  m_PrefabInstance: {fileID: 2129765217}
-  m_PrefabAsset: {fileID: 0}
+  jumpVelocity: 7
 --- !u!1 &1878259663
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,6 +505,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1621664267431971192, guid: 492d072c832b1a4438308d2acda60663,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621664267431971194, guid: 492d072c832b1a4438308d2acda60663,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.67605823
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621664267431971194, guid: 492d072c832b1a4438308d2acda60663,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.2716695
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621664267431971194, guid: 492d072c832b1a4438308d2acda60663,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.7297508
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621664267431971194, guid: 492d072c832b1a4438308d2acda60663,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.6489069
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621664267431971194, guid: 492d072c832b1a4438308d2acda60663,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.013366625
+      objectReference: {fileID: 0}
     - target: {fileID: 1621664267431971199, guid: 492d072c832b1a4438308d2acda60663,
         type: 3}
       propertyPath: mainCamera
@@ -580,5 +605,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mousey
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1621664267431971199, guid: 492d072c832b1a4438308d2acda60663, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 492d072c832b1a4438308d2acda60663, type: 3}
