@@ -70,7 +70,7 @@ public class PlayerMovementController : MonoBehaviour {
 
     public void Jump() {
         if (isGrounded) {
-          //  animator.SetTrigger("Jump");
+            animator.SetTrigger("Jump");
             verticalVelocity += jumpVelocity;
             isGrounded = false;
 
