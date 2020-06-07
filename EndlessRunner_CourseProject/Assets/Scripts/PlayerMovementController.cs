@@ -8,7 +8,7 @@ public class PlayerMovementController : MonoBehaviour {
     //vertical movement: 
     private bool isGrounded = true;
     private float verticalVelocity = 0.0f;
-    private float gravity = 0.8f;
+    [SerializeField] private float gravity = 0.8f;
     [SerializeField] private float jumpVelocity = 7.0f;
 
     Animator animator; 
@@ -32,7 +32,7 @@ public class PlayerMovementController : MonoBehaviour {
         
         Vector3 finalPosition = transform.position + moveForwardDirection + moveHorizontallyDirection + moveVerticalDirection;
         transform.position = ValidatePositionIfOutsidePath(finalPosition);
-        
+
     }
 
     private void OnDisable() {
@@ -70,7 +70,7 @@ public class PlayerMovementController : MonoBehaviour {
 
     public void Jump() {
         if (isGrounded) {
-            animator.SetTrigger("Jump");
+          //  animator.SetTrigger("Jump");
             verticalVelocity += jumpVelocity;
             isGrounded = false;
 
@@ -91,6 +91,8 @@ public class PlayerMovementController : MonoBehaviour {
             if (hit.collider.tag.Equals("Ground")) {
                 isGrounded = true;
             }
+            else
+                isGrounded = false;
 
         }
         isGrounded = false;
@@ -101,6 +103,12 @@ public class PlayerMovementController : MonoBehaviour {
         if (collision.gameObject.CompareTag("Ground")) {
             isGrounded = true;
             verticalVelocity = 0;
+        }
+        if (collision.gameObject.CompareTag("Lake")) {
+            isGrounded = false;
+            //runningForwardSpeed = 1; 
+            //gravity = 15;
+            Fall();
         }
     }
 }
