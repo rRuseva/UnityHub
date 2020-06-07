@@ -23,12 +23,13 @@ public class PlayerMovementController : MonoBehaviour {
         Vector3 moveForwardDirection = Time.deltaTime * new Vector3(runningForwardSpeed, 0, 0);
         Vector3 moveHorizontallyDirection = Time.deltaTime * new Vector3(0, 0, horizontalDistanceToMove);
         horizontalDistanceToMove = 0;
+       
         if (isGrounded) 
             verticalVelocity = 0.0f;
         else 
             Fall();
-
         Vector3 moveVerticalDirection = Time.deltaTime * new Vector3(0, verticalVelocity, 0);
+        
         Vector3 finalPosition = transform.position + moveForwardDirection + moveHorizontallyDirection + moveVerticalDirection;
         transform.position = ValidatePositionIfOutsidePath(finalPosition);
         
