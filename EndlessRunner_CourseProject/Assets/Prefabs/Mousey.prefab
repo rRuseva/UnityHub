@@ -1659,7 +1659,6 @@ GameObject:
   - component: {fileID: 1621664267431971192}
   - component: {fileID: 1621664267431971194}
   - component: {fileID: 1621664267431971197}
-  - component: {fileID: 1621664267431971199}
   m_Layer: 0
   m_Name: Mousey
   m_TagString: Player
@@ -1710,8 +1709,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5947613, y: 1.1107639, z: 1.0095433}
-  m_Center: {x: 0.025170475, y: 0.5684541, z: -0.0047728415}
+  m_Size: {x: 0.56064206, y: 1.110764, z: 0.6871565}
+  m_Center: {x: 0.0151629755, y: 0.568454, z: 0.037044972}
 --- !u!95 &1621664267431971197
 Animator:
   serializedVersion: 3
@@ -1731,22 +1730,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1621664267431971199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7323031223820901157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0a4890ab408f2440a3628dc5b5231c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 13
-  turnSpeed: 10
-  velocity: 5
-  mainCamera: {fileID: 0}
 --- !u!1 &7420322475013569468
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,8 +11,8 @@ public class PathManager : MonoBehaviour
     private Transform playerTransofrm;
     private float spawnX = -10.0f;
     private float pathLenght = 10.0f;
-    private int amnPathsOnScreen = 7;
-    private int safeZone = 14;
+    private int amnPathsOnScreen = 9;
+    private int safeZone = 18;
     private List<GameObject> activePaths;
     //private int lastPrefabIndex = 0;
 
@@ -23,8 +23,10 @@ public class PathManager : MonoBehaviour
         
         for(int i = 0; i < amnPathsOnScreen; i++) {
             // the first two paths infront will always be a clean paths (with no obsticles)
-            if (i < 4)
+            if (i < 4) {
                 SpawnPath(0);
+                Debug.Log("init 4");
+            }
             else
                 SpawnPath();
         }
@@ -40,7 +42,7 @@ public class PathManager : MonoBehaviour
 
     private void SpawnPath(int prefabIndex = -1) {
         GameObject go;
-        go = ObjectPooler.SharedInstance.GetPooledObject("Ground", true);
+        go = ObjectPooler.SharedInstance.GetPooledObject("Ground", prefabIndex);
         //if (prefabIndex == -1)
         //    go = pathPrefabs[RandomPrefabIndex()] as GameObject;
         //else
@@ -57,7 +59,6 @@ public class PathManager : MonoBehaviour
             spawnX += pathLenght;
             activePaths.Add(go);
         }
-        else Debug.LogError("null pooled obj");
     }
     private void DeletePath() {
         activePaths[0].SetActive(false);

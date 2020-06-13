@@ -37,14 +37,17 @@ public class ObjectPooler : MonoBehaviour
     }
 
     
-    public GameObject GetPooledObject(string tag, bool randomize) {
-        int index = RandomIndex();
-        if (!randomize) {
+    public GameObject GetPooledObject(string tag, int index = -1) {
+        index = RandomIndex();
+        if (index == -1) {
             for (int i = 0; i < pooledObjects.Count; i++) {
                 if (!pooledObjects[i].activeInHierarchy && pooledObjects[i].tag == tag) {
                     return pooledObjects[i];
                 }
             }
+        }
+        else if (index == 0 ) {
+            return pooledObjects[index];
         }
         else {
             while (pooledObjects[index])
@@ -70,7 +73,7 @@ public class ObjectPooler : MonoBehaviour
         if (pooledObjects.Count <= 1) return 0;
         int randomIndex = lastChosenIndex;
         while (randomIndex == lastChosenIndex) {
-            randomIndex = Random.Range(0, pooledObjects.Count);
+            randomIndex = Random.Range(1, pooledObjects.Count);
         }
         lastChosenIndex = randomIndex;
         return randomIndex;
