@@ -6,15 +6,15 @@ using UnityEngine;
 
 public class PathManager : MonoBehaviour
 {
-    public GameObject[] pathPrefabs;
-
+    //public GameObject[] pathPrefabs;
+    //public List<GameObject> pathPrefabs;
     private Transform playerTransofrm;
     private float spawnX = -10.0f;
     private float pathLenght = 10.0f;
     private int amnPathsOnScreen = 7;
     private int safeZone = 14;
     private List<GameObject> activePaths;
-    private int lastPrefabIndex = 0;
+    //private int lastPrefabIndex = 0;
 
     // Start is called before the first frame update
     void Start() {
@@ -40,27 +40,39 @@ public class PathManager : MonoBehaviour
 
     private void SpawnPath(int prefabIndex = -1) {
         GameObject go;
-        if(prefabIndex == -1)
-            go = Instantiate(pathPrefabs[RandomPrefabIndex()]) as GameObject;
-        else 
-            go = Instantiate(pathPrefabs[prefabIndex]) as GameObject;
-        go.transform.SetParent(transform);
-        go.transform.position = new Vector3(1, 0, 0) * spawnX;
-        spawnX += pathLenght;
-        activePaths.Add(go);
+        go = ObjectPooler.SharedInstance.GetPooledObject("Ground", true);
+        //if (prefabIndex == -1)
+        //    go = pathPrefabs[RandomPrefabIndex()] as GameObject;
+        //else
+        //    go = pathPrefabs[prefabIndex] as GameObject;
+
+        //if (prefabIndex == -1)
+        //    //go = Instantiate(pathPrefabs[RandomPrefabIndex()]) as GameObject;
+        //else
+        //    go = Instantiate(pathPrefabs[prefabIndex]) as GameObject;
+        if (go != null) {
+            go.SetActive(true);
+            go.transform.SetParent(transform);
+            go.transform.position = new Vector3(1, 0, 0) * spawnX;
+            spawnX += pathLenght;
+            activePaths.Add(go);
+        }
+        else Debug.LogError("null pooled obj");
     }
     private void DeletePath() {
-        Destroy(activePaths[0]);
+        activePaths[0].SetActive(false);
+        //Destroy(activePaths[0]);
         activePaths.RemoveAt(0);
     }
 
-    private int RandomPrefabIndex() {
-        if (pathPrefabs.Length <= 1) return 0;
-        int randomIndex = lastPrefabIndex;
-        while(randomIndex == lastPrefabIndex) {
-            randomIndex = Random.Range(0, pathPrefabs.Length);
-        }
-        lastPrefabIndex = randomIndex;
-        return randomIndex; 
-    }
+    //int maxIndex = ObjectPooler.SharedInstance.pooledObjects.Count;
+    //private int RandomPrefabIndex() {
+    //    if (maxIndex <= 1) return 0;
+    //    int randomIndex = lastPrefabIndex;
+    //    while (randomIndex == lastPrefabIndex) {
+    //        randomIndex = Random.Range(0, maxIndex);
+    //    }
+    //    lastPrefabIndex = randomIndex;
+    //    return randomIndex;
+    //}
 }
