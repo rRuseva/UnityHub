@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Score : MonoBehaviour {
     public event Action<int> OnScoreChanged;
-    [SerializeField] private Health playerHealth; // todo - find a better way to detect when the player dies and the game finishes
+    private Health playerHealth; // todo - find a better way to detect when the player dies and the game finishes
     private static readonly int minScore = 0;
     private int score;
 
@@ -12,6 +12,7 @@ public class Score : MonoBehaviour {
     public float interval = 4f;
 
     private void Start() {
+        playerHealth = GameObject.FindWithTag("Player").GetComponent<Health>();
         ChangeScore(minScore);
         playerHealth.OnDie += SaveScore;
     }
@@ -43,5 +44,9 @@ public class Score : MonoBehaviour {
     private void ChangeScore(int newScore) {
         score = newScore;
         OnScoreChanged?.Invoke(score);
+    }
+
+    public int GetScore() {
+        return score;
     }
 }

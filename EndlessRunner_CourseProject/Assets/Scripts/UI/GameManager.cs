@@ -1,17 +1,18 @@
-﻿using UnityEditor;
+﻿//using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-    public SceneAsset mainMenuScene;
-    public SceneAsset endlessRunnerScene;
+    //public SceneAsset mainMenuScene = null;
+    //public SceneAsset endlessRunnerScene = null;
 
     public void LoadGame() {
-        SceneManager.LoadScene(endlessRunnerScene.name);
+        //SceneManager.LoadScene(endlessRunnerScene.name);
+        SceneManager.LoadScene("EndlessRunnerScene");
     }
 
     public void LoadMainMenu() {
-        SceneManager.LoadScene(mainMenuScene.name);
+        SceneManager.LoadScene("MainMenuScene");
     }
 
     public void EndGame() {

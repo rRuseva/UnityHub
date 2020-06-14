@@ -1,0 +1,11 @@
+TO DO:
+1. crouching - controls; movment; animation
+2. Death conditions 
+3. death menu
+4. coins and score functionality;
+5. collisions to fix
+6. obsticles generetion
+7. build settings - no menu on build 
+
+
+https://www.raywenderlich.com/847-object-pooling-in-unity#toc-anchor-006

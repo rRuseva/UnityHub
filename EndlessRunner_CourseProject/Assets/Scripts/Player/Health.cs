@@ -7,10 +7,12 @@ public class Health : MonoBehaviour {
     public event Action OnDie;
     private static readonly int maxHealth = 100;
     private int health;
+    //to do - find a better way
+    public DeathMenu playerDeathMenu;
 
     // Two temp fields to test Health UI:
-    private float nextActionTime = 0.0f;
-    public float interval = 4f;
+    //private float nextActionTime = 0.0f;
+    //public float interval = 4f;
 
     private void Start() {
         ChangeHealth(maxHealth);
@@ -36,6 +38,7 @@ public class Health : MonoBehaviour {
     private void Die() {
         OnDie?.Invoke();
         Destroy(gameObject);
+        playerDeathMenu.ToggleDeathMenu();
         // Spawn some dialog here with button OK and the button will call GameManager.LoadMainMenu()
     }
 
