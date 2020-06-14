@@ -18,10 +18,10 @@ public class Health : MonoBehaviour {
 
     private void Update() {
         // Simulate take damage for test purposes
-        if (Time.time > nextActionTime) {
-            nextActionTime += interval;
-            TakeDamage(10);
-        }
+        //if (Time.time > nextActionTime) {
+        //    nextActionTime += interval;
+        //    TakeDamage(10);
+        //}
     }
 
     private void TakeDamage(int damage) {
@@ -43,4 +43,11 @@ public class Health : MonoBehaviour {
         health = Clamp(newHealth, 0, maxHealth);
         OnHealthChanged?.Invoke(health);
     }
+
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.CompareTag("Obsticle")) {
+            TakeDamage(5);
+        }
+    }
+
 }

@@ -6,15 +6,13 @@ using UnityEngine;
 
 public class PathManager : MonoBehaviour
 {
-    //public GameObject[] pathPrefabs;
-    //public List<GameObject> pathPrefabs;
+
     private Transform playerTransofrm;
     private float spawnX = -10.0f;
     private float pathLenght = 10.0f;
     private int amnPathsOnScreen = 9;
     private int safeZone = 18;
     private List<GameObject> activePaths;
-    //private int lastPrefabIndex = 0;
 
     // Start is called before the first frame update
     void Start() {
@@ -25,7 +23,6 @@ public class PathManager : MonoBehaviour
             // the first two paths infront will always be a clean paths (with no obsticles)
             if (i < 4) {
                 SpawnPath(0);
-                Debug.Log("init 4");
             }
             else
                 SpawnPath();
@@ -43,15 +40,6 @@ public class PathManager : MonoBehaviour
     private void SpawnPath(int prefabIndex = -1) {
         GameObject go;
         go = ObjectPooler.SharedInstance.GetPooledObject("Ground", prefabIndex);
-        //if (prefabIndex == -1)
-        //    go = pathPrefabs[RandomPrefabIndex()] as GameObject;
-        //else
-        //    go = pathPrefabs[prefabIndex] as GameObject;
-
-        //if (prefabIndex == -1)
-        //    //go = Instantiate(pathPrefabs[RandomPrefabIndex()]) as GameObject;
-        //else
-        //    go = Instantiate(pathPrefabs[prefabIndex]) as GameObject;
         if (go != null) {
             go.SetActive(true);
             go.transform.SetParent(transform);
@@ -62,18 +50,7 @@ public class PathManager : MonoBehaviour
     }
     private void DeletePath() {
         activePaths[0].SetActive(false);
-        //Destroy(activePaths[0]);
         activePaths.RemoveAt(0);
     }
 
-    //int maxIndex = ObjectPooler.SharedInstance.pooledObjects.Count;
-    //private int RandomPrefabIndex() {
-    //    if (maxIndex <= 1) return 0;
-    //    int randomIndex = lastPrefabIndex;
-    //    while (randomIndex == lastPrefabIndex) {
-    //        randomIndex = Random.Range(0, maxIndex);
-    //    }
-    //    lastPrefabIndex = randomIndex;
-    //    return randomIndex;
-    //}
 }
