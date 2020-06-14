@@ -6,6 +6,7 @@ public class DeathMenu : MonoBehaviour
 {
     public Health playerHealth = null;
     public Score playerScore = null;
+	public GameObject gameHUD = null;
 
     private TextMeshProUGUI endScore = null;
     // Start is called before the first frame update
@@ -13,6 +14,7 @@ public class DeathMenu : MonoBehaviour
         gameObject.SetActive(false);
         playerHealth = GameObject.FindWithTag("Player").GetComponent<Health>();
         playerScore = GameObject.FindWithTag("Player").GetComponent<Score>();
+		
         endScore = GetComponent<TextMeshProUGUI>();
         
     }
@@ -24,7 +26,9 @@ public class DeathMenu : MonoBehaviour
 
 
     public void ToggleDeathMenu() {
-        gameObject.SetActive(true);
+	//there should be a better way to disable HUD when dead
+        gameHUD.SetActive(false);
+		gameObject.SetActive(true);
         endScore.SetText(playerScore.GetScore().ToString());
         Debug.Log("u r dead");
     }
