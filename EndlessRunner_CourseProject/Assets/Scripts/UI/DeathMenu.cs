@@ -1,35 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
-public class DeathMenu : MonoBehaviour
-{
-    public Health playerHealth = null;
-    public Score playerScore = null;
-	public GameObject gameHUD = null;
+public class DeathMenu : MonoBehaviour {
+    [SerializeField] private Score playerScore = null;
+    [SerializeField] private TextMeshProUGUI endScore = null;
+    private GameObject panel = null;
 
-    private TextMeshProUGUI endScore = null;
-    // Start is called before the first frame update
     void Start() {
-        gameObject.SetActive(false);
-        playerHealth = GameObject.FindWithTag("Player").GetComponent<Health>();
-        playerScore = GameObject.FindWithTag("Player").GetComponent<Score>();
-		
-        endScore = GetComponent<TextMeshProUGUI>();
-        
+        //playerScore = GameObject.FindWithTag("Player").GetComponent<Score>();
+        //endScore = GetComponent<TextMeshProUGUI>();
+        panel = gameObject.transform.Find("Panel").gameObject;
+        playerScore.OnGameOverWithScore += ActivatePanel;
+        DeactivatePanel();
     }
 
-    // Update is called once per frame
-    void Update() {
-        playerHealth.OnDie += ToggleDeathMenu;
+    private void OnDisable() {
+        playerScore.OnGameOverWithScore -= ActivatePanel;
     }
 
+    private void ActivatePanel(int score) {
+        panel.SetActive(true);
+        endScore.SetText("Score: " + score.ToString());
+    }
 
-    public void ToggleDeathMenu() {
-	//there should be a better way to disable HUD when dead
-        gameHUD.SetActive(false);
-		gameObject.SetActive(true);
-        endScore.SetText(playerScore.GetScore().ToString());
-        Debug.Log("u r dead");
+    private void DeactivatePanel() {
+        panel.SetActive(false);
     }
 }
