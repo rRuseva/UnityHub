@@ -21,10 +21,10 @@ public class Score : MonoBehaviour {
     private void Update() {
 
         // Simulate the winning of bonuses for test purposes
-        // if (Time.time > nextActionTime) {
-        //     nextActionTime += interval;
-        //     EarnPoints(10);
-        // }
+        //if (Time.time > nextActionTime) {
+        //    nextActionTime += interval;
+        //    EarnPoints(10);
+        //}
     }
 
     private void OnDisable() {
@@ -50,5 +50,14 @@ public class Score : MonoBehaviour {
 
     public int GetScore() {
         return score;
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.CompareTag("Coin")) {
+            EarnPoints(10);
+            //call an action to diable the coin and add it to the pool
+            collision.gameObject.SetActive(false);
+            Debug.Log("collected coin");
+        }
     }
 }
