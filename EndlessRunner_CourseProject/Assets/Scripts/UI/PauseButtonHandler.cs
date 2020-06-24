@@ -19,6 +19,7 @@ public class PauseButtonHandler : MonoBehaviour {
     }
 
     void TogglePause() {
+        AudioManager.PlayClickButtonSound();
         if (Time.timeScale == 1) {
             Time.timeScale = 0;
             pauseImage.sprite = playIcon;

@@ -565,7 +565,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e11af7e975363c546901be1fe53063ad, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 42124a849046933449f3eeed4bafa6fc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -757,15 +757,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 03a1164ad7033004f84a80e02efa1748, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d7b21a136ff39104cbb4f7b873c5d18e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.245
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 63
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1444,6 +1444,34 @@ MonoBehaviour:
   playerName: {fileID: 1945392212}
   playButton: {fileID: 1195648311}
   exitButton: {fileID: 1809766469}
+  playButtonEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 642722095}
+        m_MethodName: LoadGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  exitButtonEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 642722095}
+        m_MethodName: EndGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1124552908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,18 +1699,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1195648312}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 642722095}
-        m_MethodName: LoadGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1195648312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2168,18 +2185,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1809766470}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 642722095}
-        m_MethodName: EndGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1809766470
 MonoBehaviour:
   m_ObjectHideFlags: 0

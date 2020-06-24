@@ -12,6 +12,7 @@ public class Health : MonoBehaviour {
 
     private void Update() {
         if (IsFallingAndIsNotDead()) {
+            AudioManager.PlayFallSound();
             TakeDamage(health);
         }
     }
@@ -37,12 +38,12 @@ public class Health : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Obsticle")) {
+            AudioManager.PlayCrashTreeSound();
             TakeDamage(5);
         }
     }
 
     private bool IsFallingAndIsNotDead() {
-        return transform.position.y < -5 && health > 0;
+        return transform.position.y < -3 && health > 0;
     }
-
 }

@@ -16,6 +16,7 @@ public class MuteButtonHandler : MonoBehaviour {
     }
 
     void ToggleMute() {
+        AudioManager.PlayClickButtonSound();
         bool newSoundOn = !Prefs.IsSoundOn();
         ChangeMuteButtonIcon(newSoundOn);
         OnSoundStateChanged?.Invoke(newSoundOn);

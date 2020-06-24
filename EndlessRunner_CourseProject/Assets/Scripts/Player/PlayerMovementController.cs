@@ -2,7 +2,7 @@
 
 public class PlayerMovementController : MonoBehaviour {
     [SerializeField] private float runningForwardSpeed = 7;
-    private float horizontalDistanceToMove;
+    private float horizontalDistanceToMove = 0;
 
     //vertical movement: 
     private bool isGrounded = true;
@@ -12,7 +12,6 @@ public class PlayerMovementController : MonoBehaviour {
     private Animator animator;
     private void Start() {
         InputRecognizer.swipe += OnMove;
-        horizontalDistanceToMove = 0;
         animator = GetComponent<Animator>();
     }
 
@@ -59,20 +58,21 @@ public class PlayerMovementController : MonoBehaviour {
     }
 
     private Vector3 ValidatePositionIfOutsidePath(Vector3 positionToValidate) {
-        float validHorizontalPosition = Mathf.Clamp(positionToValidate.z, -Constants.OFFSET_FROM_EDGES, Constants.OFFSET_FROM_EDGES);
+        float validHorizontalPosition = Mathf.Clamp(positionToValidate.z, -Constants.OFFSET_FROM_CENTER, Constants.OFFSET_FROM_CENTER);
         return new Vector3(positionToValidate.x, positionToValidate.y, validHorizontalPosition);
     }
 
     public void Jump() {
         if (isGrounded) {
             animator.SetTrigger("Jump");
+            AudioManager.PlayJumpSound();
             verticalVelocity += jumpVelocity;
             isGrounded = false;
         }
     }
 
     public void Crouch() {
-        if (isGrounded) {
+        if (isGrounded && !AnimatorIsPlaying()) {
             animator.SetTrigger("Crouch");
         }
     }
@@ -109,5 +109,10 @@ public class PlayerMovementController : MonoBehaviour {
             isGrounded = false;
             Fall();
         }
+    }
+
+    private bool AnimatorIsPlaying() {
+        return animator.GetCurrentAnimatorStateInfo(0).length >
+               animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
     }
 }
