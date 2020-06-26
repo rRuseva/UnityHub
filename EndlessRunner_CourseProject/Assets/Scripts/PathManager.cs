@@ -13,16 +13,15 @@ public class PathManager : MonoBehaviour
     private int amnPathsOnScreen = 9;
     private int safeZone = 18;
     private List<GameObject> activePaths;
-    public BonusManager bonusManager;
 
     // Start is called before the first frame update
     void Start() {
         activePaths = new List<GameObject>();
         playerTransofrm = GameObject.FindGameObjectWithTag("Player").transform;
-        bonusManager = FindObjectOfType<BonusManager>();
+        
 
         for(int i = 0; i < amnPathsOnScreen; i++) {
-            // the first two paths infront will always be a clean paths (with no obsticles)
+            // the first 4 paths infront will always be a clean paths (with no obsticles)
             if (i < 4) {
                 SpawnPath(0);
             }
@@ -36,15 +35,13 @@ public class PathManager : MonoBehaviour
         if(playerTransofrm.position.x - safeZone > (spawnX - amnPathsOnScreen * pathLenght)) {
             SpawnPath();
             DeletePath();
-
-            //Vector3 newCoinPosition = new Vector3(playerTransofrm.position.x + 2 * safeZone, 1, 1);
-            //bonusManager.SpawnCoins(newCoinPosition, -1);
         }
     }
 
     private void SpawnPath(int prefabIndex = -1) {
         GameObject go;
-        go = ObjectPooler.SharedInstance.GetPooledObject("Ground", prefabIndex);
+      //  go = ObjectPooler.SharedInstance.GetPooledObject("Ground", prefabIndex);
+        go = ObjectPooler.SharedInstance.GetPooledCleanPath();
         if (go != null) {
             go.SetActive(true);
             go.transform.SetParent(transform);
