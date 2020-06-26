@@ -36,6 +36,14 @@ public class ObjectPooler : MonoBehaviour
         
     }
 
+    public GameObject GetPooledCleanPath() {
+        for (int i = 0; i < pooledObjects.Count; i++) {
+            if (!pooledObjects[i].activeInHierarchy) {
+                return pooledObjects[i];
+            }
+        }
+        return null;
+    }
     
     public GameObject GetPooledObject(string tag, int index = -1) {
         index = RandomIndex();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BonusSpawner : MonoBehaviour {
-    GameObjectsPooler objPooler;
+    private GameObjectsPooler objPooler;
 
     // Two temp fields to test :
     private float nextActionTime = 0.0f;
@@ -39,7 +39,7 @@ public class BonusSpawner : MonoBehaviour {
             //not sure it is optimall
             foreach(GameObject go in objPooler.poolDictionary["Coin"]) {
                 if(go.transform.position.x + 2*safeZone < playerTransofrm.position.x) {
-                    objPooler.DeactivateBonus(go);
+                    objPooler.DeactivateGameObject("Coin", go);
                     Debug.LogWarning("deactivated unused coin");
                 }
 

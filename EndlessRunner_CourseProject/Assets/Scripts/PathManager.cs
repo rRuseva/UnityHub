@@ -40,7 +40,8 @@ public class PathManager : MonoBehaviour
 
     private void SpawnPath(int prefabIndex = -1) {
         GameObject go;
-        go = ObjectPooler.SharedInstance.GetPooledObject("Ground", prefabIndex);
+      //  go = ObjectPooler.SharedInstance.GetPooledObject("Ground", prefabIndex);
+        go = ObjectPooler.SharedInstance.GetPooledCleanPath();
         if (go != null) {
             go.SetActive(true);
             go.transform.SetParent(transform);

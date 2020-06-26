@@ -3566,6 +3566,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030393947}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1032881829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1032881831}
+  - component: {fileID: 1032881830}
+  m_Layer: 0
+  m_Name: ObstacleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1032881830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032881829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e18a1a6befda1a46857d7db78ec7a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSecondsToNextObstacle: 0.5
+  maxSecondsToNextObstacle: 3
+--- !u!4 &1032881831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032881829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1076244947
 GameObject:
   m_ObjectHideFlags: 0
@@ -4296,23 +4341,7 @@ MonoBehaviour:
   - shouldExpand: 0
     objectToPool: {fileID: 5963847074630635881, guid: 23b289eaf77a8f942a417d8287bc5f84,
       type: 3}
-    amountToPool: 7
-  - shouldExpand: 0
-    objectToPool: {fileID: 8656765303980913075, guid: 9eb4d99ad6f5e6744a3931dcebf6626e,
-      type: 3}
-    amountToPool: 3
-  - shouldExpand: 0
-    objectToPool: {fileID: 3054421120796075139, guid: 52dfb413077ad4d4fb437d501082146b,
-      type: 3}
-    amountToPool: 2
-  - shouldExpand: 0
-    objectToPool: {fileID: 9123830099969015635, guid: dca944ccce00cd648b2b1f0706c45a5a,
-      type: 3}
-    amountToPool: 2
-  - shouldExpand: 0
-    objectToPool: {fileID: 3272179365778038090, guid: 11524d403566917469574be213e20b17,
-      type: 3}
-    amountToPool: 2
+    amountToPool: 15
   pooledObjects: []
 --- !u!82 &1274623562
 AudioSource:
@@ -6768,6 +6797,13 @@ MonoBehaviour:
   - tag: CoinV
     prefab: {fileID: 6998833623215491439, guid: 37caf685437c1b243927f4f685133436,
       type: 3}
+    size: 5
+  - tag: Tree
+    prefab: {fileID: 3071438225037389186, guid: 02769bc378489874ca4e00b02d0048e2,
+      type: 3}
+    size: 8
+  - tag: Cheese
+    prefab: {fileID: 474346040963643945, guid: 8a1c9e2a069d56145ae98a6dd42df67a, type: 3}
     size: 5
 --- !u!4 &2088452983
 Transform:

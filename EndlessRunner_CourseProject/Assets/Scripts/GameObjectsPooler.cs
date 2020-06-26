@@ -15,7 +15,7 @@ public class GameObjectsPooler : MonoBehaviour {
     public static GameObjectsPooler Instance;
 
     private void Awake() {
-        Instance = this; 
+        Instance = this;
     }
     void Start() {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
@@ -35,7 +35,7 @@ public class GameObjectsPooler : MonoBehaviour {
     }
 
     public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation) {
-        
+
         if (!poolDictionary.ContainsKey(tag)) {
             Debug.LogWarning("Pool with tag" + tag + "doesn't exist!");
             return null;
@@ -57,7 +57,7 @@ public class GameObjectsPooler : MonoBehaviour {
         return goToSpawn;
     }
 
-    public void DeactivateBonus(GameObject go) {
+    public void DeactivateGameObject(string tag, GameObject go) {
         go.SetActive(false);
         poolDictionary[tag].Enqueue(go);
     }
