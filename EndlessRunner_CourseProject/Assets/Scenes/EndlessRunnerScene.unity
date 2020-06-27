@@ -2717,7 +2717,7 @@ RectTransform:
   - {fileID: 1459507962}
   - {fileID: 1903275030}
   m_Father: {fileID: 233170168}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -5520,7 +5520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningForwardSpeed: 7
   gravity: 0.8
-  jumpVelocity: 0.3
+  jumpVelocity: 0.2
 --- !u!114 &1679962740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6797,14 +6797,14 @@ MonoBehaviour:
   - tag: CoinV
     prefab: {fileID: 6998833623215491439, guid: 37caf685437c1b243927f4f685133436,
       type: 3}
-    size: 5
+    size: 2
   - tag: Tree
-    prefab: {fileID: 3071438225037389186, guid: 02769bc378489874ca4e00b02d0048e2,
+    prefab: {fileID: 6699817519957490990, guid: 89ceb9773494cae41b6a9f59303f55c9,
       type: 3}
     size: 8
   - tag: Cheese
-    prefab: {fileID: 474346040963643945, guid: 8a1c9e2a069d56145ae98a6dd42df67a, type: 3}
-    size: 5
+    prefab: {fileID: 0}
+    size: 15
 --- !u!4 &2088452983
 Transform:
   m_ObjectHideFlags: 0
