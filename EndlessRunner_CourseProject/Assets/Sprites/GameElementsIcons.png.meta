@@ -20,6 +20,27 @@ TextureImporter:
   - first:
       213: -6371046104103772694
     second: GameElementsIcons_5
+  - first:
+      213: 1228287227938218125
+    second: GameElementsIcons_0
+  - first:
+      213: 7149000025053456033
+    second: GameElementsIcons_1
+  - first:
+      213: -4625525776230853979
+    second: GameElementsIcons_2
+  - first:
+      213: 7591928139877208386
+    second: GameElementsIcons_3
+  - first:
+      213: -5492559658478911060
+    second: GameElementsIcons_4
+  - first:
+      213: -5060724796231045036
+    second: GameElementsIcons_5
+  - first:
+      213: -9154100835244611759
+    second: GameElementsIcons_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -142,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cb2c6963a8b8c9e0800000000000000
-      internalID: -1600826655542334523
+      spriteID: d80286fd9b0cb0110800000000000000
+      internalID: 1228287227938218125
       vertices: []
       indices: 
       edges: []
@@ -153,9 +174,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 9
-        y: 30
+        y: 12
         width: 156
-        height: 137
+        height: 155
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +184,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27bd1d6faee69e1a0800000000000000
-      internalID: -6779765808587220110
+      spriteID: 1a6e19055a9563360800000000000000
+      internalID: 7149000025053456033
       vertices: []
       indices: 
       edges: []
@@ -174,9 +195,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 201
-        y: 16
+        y: 0
         width: 107
-        height: 162
+        height: 178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,8 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 360490a6357027380800000000000000
-      internalID: -8975103052553306013
+      spriteID: 5a2d85840d4decfb0800000000000000
+      internalID: -4625525776230853979
       vertices: []
       indices: 
       edges: []
@@ -205,14 +226,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcb632f4d60326580800000000000000
-      internalID: -8835446272910201907
+      spriteID: 2415ca16b62fb5960800000000000000
+      internalID: 7591928139877208386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: GameElementsIcons_4
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 27
+        width: 169
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca149b8671286c3b0800000000000000
+      internalID: -5492559658478911060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameElementsIcons_5
       rect:
         serializedVersion: 2
         x: 166
@@ -226,14 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c8c2ceb11c240fd0800000000000000
-      internalID: -2376726248618276668
+      spriteID: 45033a65c91b4c9b0800000000000000
+      internalID: -5060724796231045036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameElementsIcons_5
+      name: GameElementsIcons_6
       rect:
         serializedVersion: 2
         x: 148
@@ -247,8 +289,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aed1245d25f7597a0800000000000000
-      internalID: -6371046104103772694
+      spriteID: 15763257ac916f080800000000000000
+      internalID: -9154100835244611759
       vertices: []
       indices: 
       edges: []

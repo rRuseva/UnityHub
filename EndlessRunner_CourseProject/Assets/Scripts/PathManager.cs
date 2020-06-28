@@ -20,7 +20,7 @@ public class PathManager : MonoBehaviour
         
 
         for(int i = 0; i < amnPathsOnScreen; i++) {
-            // the first 4 paths infront will always be a clean paths (with no obsticles)
+            // the first 4 paths infront will always be a clean paths (with no obstacle)
             if (i < 4) {
                 SpawnPath(0);
             }
