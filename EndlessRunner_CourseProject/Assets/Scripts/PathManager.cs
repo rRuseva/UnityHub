@@ -10,7 +10,7 @@ public class PathManager : MonoBehaviour
     private Transform playerTransofrm;
     private float spawnX = -10.0f;
     private float pathLenght = 10.0f;
-    private int amnPathsOnScreen = 9;
+    private int amnPathsOnScreen = 12;
     private int safeZone = 18;
     private List<GameObject> activePaths;
 

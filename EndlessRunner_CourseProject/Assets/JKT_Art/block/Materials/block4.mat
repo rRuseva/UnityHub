@@ -30,4 +30,4 @@ Material:
     m_Floats:
     - _LIGHT_STR: 1.4079676
     m_Colors:
-    - _Color: {r: 0.588, g: 0.588, b: 0.588, a: 1}
+    - _Color: {r: 0, g: 0.32271153, b: 0.6415094, a: 0.28235295}

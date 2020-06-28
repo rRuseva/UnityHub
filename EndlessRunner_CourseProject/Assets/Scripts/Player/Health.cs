@@ -6,6 +6,7 @@ public class Health : MonoBehaviour {
     public event Action<int> OnHealthChanged;
     public event Action OnDie;
     private int health;
+    public CameraShake camShake;
     private void Start() {
         ChangeHealth(Constants.MAX_HEALTH);
     }
@@ -47,6 +48,8 @@ public class Health : MonoBehaviour {
         if (collision.gameObject.CompareTag("Obstacle")) {
             AudioManager.PlayCrashTreeSound();
             TakeDamage(5);
+			Handheld.Vibrate();
+            StartCoroutine(camShake.Shake());
         } 
         if (collision.gameObject.CompareTag("Cheese")) {
             Heal(5);
