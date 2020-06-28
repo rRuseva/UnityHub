@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BonusSpawner : MonoBehaviour {
-    private GameObjectsPooler objPooler;
+
+    [SerializeField] private int minimumCoinCount = 3;
+    [SerializeField] private int maximumCoinCount = 5;
+    private GameObjectsPooler objPooler; 
+    private readonly string[] BonusTags = { "Cheese", "Coin" }; // just add more tags here: { "Cheese", "Coin", "CampFire" }
 
     // Two temp fields to test :
     private float nextActionTime = 0.0f;
@@ -12,40 +16,45 @@ public class BonusSpawner : MonoBehaviour {
     private Transform playerTransofrm;
     private int safeZone = 18;
 
-    [SerializeField]
-    private int minimumCoinCount = 3;
-    [SerializeField]
-    private int maximumCoinCount = 5;
-
-    // Start is called before the first frame update
     void Start(){
         objPooler = GameObjectsPooler.Instance;
         playerTransofrm = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
     void Update() {
         if (Time.time > nextActionTime) {
             nextActionTime += interval;
 
+            //choose random number of bonus elements and random element from all tags;
             int count = Random.Range(minimumCoinCount, maximumCoinCount);
-            
+            string newBonusTag = ChooseRandomBonusTag();
+
             for ( int i = 0; i< count; i++) {
-                Vector3 newCoinPosition = new Vector3(playerTransofrm.position.x + 2 * safeZone, 0, 0) + new Vector3(1, 0, 0) * i ;
-                objPooler.SpawnFromPool("Coin", newCoinPosition, Quaternion.identity);
-                
+                Vector3 newBonusPosition = new Vector3(playerTransofrm.position.x + 2 * safeZone, 0, 0) + new Vector3(1, 0, 0) * i ;
+                SpawnBonuses(newBonusTag, newBonusPosition, Quaternion.identity);
             }
 
-            //not sure it is optimall
-            foreach(GameObject go in objPooler.poolDictionary["Coin"]) {
-                if(go.transform.position.x + 2*safeZone < playerTransofrm.position.x) {
-                    objPooler.DeactivateGameObject("Coin", go);
-                    Debug.LogWarning("deactivated unused coin");
-                }
-
-            }
+            DeactivateOldBonuses();
 
         }
     }
 
+    private void SpawnBonuses(string tag, Vector3 position, Quaternion rotation) {
+        objPooler.SpawnFromPool(tag, position, rotation);
+    }
+
+    private void DeactivateOldBonuses() {
+        foreach (string tag in BonusTags) {
+            foreach (GameObject go in objPooler.poolDictionary[tag]) {
+                if (go.transform.position.x + 3 * safeZone < playerTransofrm.position.x) {
+                    objPooler.DeactivateGameObject(tag, go);
+                }
+            }
+        }
+        
+    }
+
+    private string ChooseRandomBonusTag() {
+        return BonusTags[Random.Range(0, BonusTags.Length)];
+    }
 }

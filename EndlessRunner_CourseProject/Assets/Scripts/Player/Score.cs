@@ -55,9 +55,7 @@ public class Score : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Coin")) {
             EarnPoints(10);
-            //call an action to diable the coin and add it to the pool
             collision.gameObject.SetActive(false);
-            Debug.Log("collected coin");
         }
     }
 }

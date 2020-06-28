@@ -9,7 +9,7 @@ public class Coin : MonoBehaviour, IPooledObject {
     }
     public void OnObjectSpawn() {
         Quaternion rotation = Quaternion.Euler(1, 5, 1);
-        this.transform.rotation = rotation;
+        transform.rotation = rotation;
     }
 
     private void disableCoin() {

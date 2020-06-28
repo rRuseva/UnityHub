@@ -2175,9 +2175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797d5eb1823677a47a2735f57f9c4f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 2
   minimumCoinCount: 3
   maximumCoinCount: 5
+  interval: 2
 --- !u!4 &577776415
 Transform:
   m_ObjectHideFlags: 0
@@ -5313,13 +5313,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459507961}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.85, y: 0.85, z: 1}
   m_Children: []
   m_Father: {fileID: 671481737}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 5, y: -10}
@@ -5343,7 +5343,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6779765808587220110, guid: ce09cd383d1348448bc7af1c3e8043a9,
+  m_Sprite: {fileID: -2376726248618276668, guid: ce09cd383d1348448bc7af1c3e8043a9,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5520,7 +5520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningForwardSpeed: 7
   gravity: 0.8
-  jumpVelocity: 0.2
+  jumpVelocity: 0.4
 --- !u!114 &1679962740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6794,16 +6794,17 @@ MonoBehaviour:
     prefab: {fileID: 1007711899039389793, guid: 545f2db61acc3c64b9ed935d0b459154,
       type: 3}
     size: 10
-  - tag: CoinV
-    prefab: {fileID: 6998833623215491439, guid: 37caf685437c1b243927f4f685133436,
-      type: 3}
-    size: 2
   - tag: Tree
     prefab: {fileID: 6699817519957490990, guid: 89ceb9773494cae41b6a9f59303f55c9,
       type: 3}
     size: 8
+  - tag: SlantedTree
+    prefab: {fileID: 8064525384275870930, guid: 62370ffbbeafcad40974f37f84e88e5d,
+      type: 3}
+    size: 2
   - tag: Cheese
-    prefab: {fileID: 0}
+    prefab: {fileID: 5297881815486052137, guid: 2a653554edd9a1b47b7527c72be485b3,
+      type: 3}
     size: 15
 --- !u!4 &2088452983
 Transform:
