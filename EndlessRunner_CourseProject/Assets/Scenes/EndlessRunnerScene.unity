@@ -3010,8 +3010,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df7ce376d4d0322468f7753bd37384d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.1
-  magnitude: 0.1
+  duration: 0
+  magnitude: 0
 --- !u!1 &781795151
 GameObject:
   m_ObjectHideFlags: 0
@@ -3661,7 +3661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e18a1a6befda1a46857d7db78ec7a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSecondsToNextObstacle: 0.5
+  minSecondsToNextObstacle: 2.3
   maxSecondsToNextObstacle: 3
 --- !u!4 &1032881831
 Transform:
@@ -5605,8 +5605,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runningForwardSpeed: 7
-  gravity: 0.8
-  jumpVelocity: 0.4
+  gravity: 0.9
+  jumpVelocity: 0.3
 --- !u!114 &1679962740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6880,7 +6880,7 @@ MonoBehaviour:
   - tag: Coin
     prefab: {fileID: 1007711899039389793, guid: 545f2db61acc3c64b9ed935d0b459154,
       type: 3}
-    size: 10
+    size: 15
   - tag: Tree
     prefab: {fileID: 6699817519957490990, guid: 89ceb9773494cae41b6a9f59303f55c9,
       type: 3}
@@ -6888,7 +6888,7 @@ MonoBehaviour:
   - tag: SlantedTree
     prefab: {fileID: 8064525384275870930, guid: 62370ffbbeafcad40974f37f84e88e5d,
       type: 3}
-    size: 2
+    size: 8
   - tag: Cheese
     prefab: {fileID: 5297881815486052137, guid: 2a653554edd9a1b47b7527c72be485b3,
       type: 3}
@@ -6896,7 +6896,7 @@ MonoBehaviour:
   - tag: Lake
     prefab: {fileID: 5030092759093334710, guid: 7faaea8e19a85d2478f246eb93f0592d,
       type: 3}
-    size: 3
+    size: 15
 --- !u!4 &2088452983
 Transform:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@
 public class ObstacleSpawner : MonoBehaviour {
     [SerializeField] float minSecondsToNextObstacle = .5f;
     [SerializeField] float maxSecondsToNextObstacle = 3f;
-    private readonly string[] ObstaclesTags = { "Tree", "SlantedTree" }; // just add more tags here: { "Tree", "Lake", "CampFire" }
+    private readonly string[] ObstaclesTags = { "Tree", "SlantedTree", "Lake" }; // just add more tags here: { "Tree", "Lake", "CampFire" }
     private GameObjectsPooler objPooler;
     private float nextActionTime = .0f;
     private Transform playerTransofrm;

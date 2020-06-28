@@ -63,7 +63,7 @@ public class GameObjectsPooler : MonoBehaviour {
 
     public void DeactivateGameObject(string tag, GameObject go) {
         go.SetActive(false);
-        poolDictionary[tag].Enqueue(go);
+        //poolDictionary[tag].Enqueue(go);
     }
 
     public void DeactivateGameObjectByCondition(DeleteConditionDelegate condition, Vector3 position, string tag) {

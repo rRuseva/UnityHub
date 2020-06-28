@@ -27,9 +27,11 @@ public class BonusSpawner : MonoBehaviour {
             //choose random number of bonus elements and random element from all tags;
             int count = Random.Range(minimumCoinCount, maximumCoinCount);
             string newBonusTag = ChooseRandomBonusTag();
+			
+            float horizontalPosition = Random.Range(-1, 1) * Constants.SINGLE_HORIZONTAL_MOVEMENT_DISTANCE;
 
             for ( int i = 0; i< count; i++) {
-                Vector3 newBonusPosition = new Vector3(playerTransofrm.position.x + 2 * Constants.SAFE_ZONE, 0, 0) + new Vector3(1, 0, 0) * i ;
+                Vector3 newBonusPosition = new Vector3(playerTransofrm.position.x + 2 * Constants.SAFE_ZONE, 0, horizontalPosition) + new Vector3(1, 0, 0) * i ;
                 SpawnBonuses(newBonusTag, newBonusPosition, Quaternion.identity);
             }
 
