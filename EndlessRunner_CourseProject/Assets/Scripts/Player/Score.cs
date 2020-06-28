@@ -13,7 +13,7 @@ public class Score : MonoBehaviour {
     public float interval = 4f;
 
     private void Start() {
-        playerHealth = GameObject.FindWithTag("Player").GetComponent<Health>();
+        playerHealth = GameObject.FindWithTag(GameObjectsTags.PlayerTag).GetComponent<Health>();
         ChangeScore(minScore);
         playerHealth.OnDie += SaveScore;
     }

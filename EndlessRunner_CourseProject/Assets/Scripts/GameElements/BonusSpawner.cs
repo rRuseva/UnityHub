@@ -10,7 +10,6 @@ public class BonusSpawner : MonoBehaviour {
     public float interval = 2f;
 
     private Transform playerTransofrm;
-    private int safeZone = 18;
 
     [SerializeField]
     private int minimumCoinCount = 3;
@@ -18,9 +17,9 @@ public class BonusSpawner : MonoBehaviour {
     private int maximumCoinCount = 5;
 
     // Start is called before the first frame update
-    void Start(){
+    void Start() {
         objPooler = GameObjectsPooler.Instance;
-        playerTransofrm = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransofrm = GameObject.FindGameObjectWithTag(GameObjectsTags.PlayerTag).transform;
     }
 
     // Update is called once per frame
@@ -29,16 +28,16 @@ public class BonusSpawner : MonoBehaviour {
             nextActionTime += interval;
 
             int count = Random.Range(minimumCoinCount, maximumCoinCount);
-            
-            for ( int i = 0; i< count; i++) {
-                Vector3 newCoinPosition = new Vector3(playerTransofrm.position.x + 2 * safeZone, 0, 0) + new Vector3(1, 0, 0) * i ;
+
+            for (int i = 0; i < count; i++) {
+                Vector3 newCoinPosition = new Vector3(playerTransofrm.position.x + 2 * Constants.SAFE_ZONE, 0, 0) + new Vector3(1, 0, 0) * i;
                 objPooler.SpawnFromPool("Coin", newCoinPosition, Quaternion.identity);
-                
+
             }
 
             //not sure it is optimall
-            foreach(GameObject go in objPooler.poolDictionary["Coin"]) {
-                if(go.transform.position.x + 2*safeZone < playerTransofrm.position.x) {
+            foreach (GameObject go in objPooler.poolDictionary["Coin"]) {
+                if (go.transform.position.x + 2 * Constants.SAFE_ZONE < playerTransofrm.position.x) {
                     objPooler.DeactivateGameObject("Coin", go);
                     Debug.LogWarning("deactivated unused coin");
                 }

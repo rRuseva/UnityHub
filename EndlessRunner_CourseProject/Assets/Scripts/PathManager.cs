@@ -11,13 +11,12 @@ public class PathManager : MonoBehaviour
     private float spawnX = -10.0f;
     private float pathLenght = 10.0f;
     private int amnPathsOnScreen = 9;
-    private int safeZone = 18;
     private List<GameObject> activePaths;
 
     // Start is called before the first frame update
     void Start() {
         activePaths = new List<GameObject>();
-        playerTransofrm = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransofrm = GameObject.FindGameObjectWithTag(GameObjectsTags.PlayerTag).transform;
         
 
         for(int i = 0; i < amnPathsOnScreen; i++) {
@@ -32,7 +31,7 @@ public class PathManager : MonoBehaviour
 
     // Update is called once per frame
     void Update() { 
-        if(playerTransofrm.position.x - safeZone > (spawnX - amnPathsOnScreen * pathLenght)) {
+        if(playerTransofrm.position.x - Constants.SAFE_ZONE > (spawnX - amnPathsOnScreen * pathLenght)) {
             SpawnPath();
             DeletePath();
         }
@@ -40,7 +39,7 @@ public class PathManager : MonoBehaviour
 
     private void SpawnPath(int prefabIndex = -1) {
         GameObject go;
-      //  go = ObjectPooler.SharedInstance.GetPooledObject("Ground", prefabIndex);
+      //  go = ObjectPooler.SharedInstance.GetPooledObject(GameObjectsTags.GroundTag, prefabIndex);
         go = ObjectPooler.SharedInstance.GetPooledCleanPath();
         if (go != null) {
             go.SetActive(true);

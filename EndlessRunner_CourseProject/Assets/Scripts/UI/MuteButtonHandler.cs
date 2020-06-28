@@ -8,6 +8,7 @@ public class MuteButtonHandler : MonoBehaviour {
     [SerializeField] Sprite soundOffIcon;
     private Button muteButton;
     private Image muteImage;
+    private readonly Color purpleColor = new Color(0.250445f, 0.3290775f, 0.7924528f, 1f);
 
     void Start() {
         muteButton = GetComponent<Button>();
@@ -31,8 +32,10 @@ public class MuteButtonHandler : MonoBehaviour {
     private void ChangeMuteButtonIcon(bool soundOn) {
         if (soundOn) {
             muteImage.sprite = soundOnIcon;
+            muteImage.color = purpleColor;
         } else {
             muteImage.sprite = soundOffIcon;
+            muteImage.color = purpleColor;
         }
     }
 }

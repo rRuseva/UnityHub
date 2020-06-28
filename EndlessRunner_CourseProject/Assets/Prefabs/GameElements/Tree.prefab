@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 7717456666171932735}
   m_Layer: 0
   m_Name: Tree
-  m_TagString: Obsticle
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,7 +313,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.81
+  m_Radius: 1.6
   m_Height: 13.23
   m_Direction: 1
   m_Center: {x: 0, y: 4.81, z: 0}

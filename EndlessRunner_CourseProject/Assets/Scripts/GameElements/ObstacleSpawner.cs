@@ -3,15 +3,14 @@
 public class ObstacleSpawner : MonoBehaviour {
     [SerializeField] float minSecondsToNextObstacle = .5f;
     [SerializeField] float maxSecondsToNextObstacle = 3f;
-    private readonly string[] ObstaclesTags = { "Tree" }; // just add more tags here: { "Tree", "Lake", "CampFire" }
+    private string[] ObstaclesTags = { GameObjectsTags.TreeTag }; // just add more tags here: { "Tree", "Lake", "CampFire" }
     private GameObjectsPooler objPooler;
     private float nextActionTime = .0f;
     private Transform playerTransofrm;
-    private int safeZone = 18;
 
     private void Start() {
         objPooler = GameObjectsPooler.Instance;
-        playerTransofrm = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransofrm = GameObject.FindGameObjectWithTag(GameObjectsTags.PlayerTag).transform;
     }
 
     private void Update() {
@@ -26,7 +25,7 @@ public class ObstacleSpawner : MonoBehaviour {
     private void SpawnNewObstacle() {
         float horizontalPosition = Random.Range(-1, 1) * Constants.SINGLE_HORIZONTAL_MOVEMENT_DISTANCE;
 
-        Vector3 newObstaclePosition = new Vector3(playerTransofrm.position.x + 2 * safeZone, 0, horizontalPosition);
+        Vector3 newObstaclePosition = new Vector3(playerTransofrm.position.x + 2 * Constants.SAFE_ZONE, 0, horizontalPosition);
         string newObstacleTag = ChooseRandomObstacleTag();
         objPooler.SpawnFromPool(newObstacleTag, newObstaclePosition, Quaternion.identity);
     }
@@ -38,11 +37,11 @@ public class ObstacleSpawner : MonoBehaviour {
     }
 
     private void DeactivateObjectsWithTag(string tag) {
-        foreach (GameObject go in objPooler.poolDictionary[tag]) {
-            if (go.transform.position.x + 2 * safeZone < playerTransofrm.position.x) {
-                objPooler.DeactivateGameObject(tag, go);
-            }
-        }
+        objPooler.DeactivateGameObjectByCondition(DeactivateByCondition, playerTransofrm.position, tag);
+    }
+
+    private bool DeactivateByCondition(GameObject go, Vector3 playerPosition) {
+        return go.transform.position.x + 2 * Constants.SAFE_ZONE < playerPosition.x;
     }
 
     private string ChooseRandomObstacleTag() {

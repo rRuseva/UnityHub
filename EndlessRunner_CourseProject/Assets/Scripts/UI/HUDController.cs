@@ -4,7 +4,7 @@ public class HUDController : MonoBehaviour {
     private Health playerHealth = null;
 
     private void Start() {
-        playerHealth = GameObject.FindWithTag("Player").GetComponent<Health>();
+        playerHealth = GameObject.FindWithTag(GameObjectsTags.PlayerTag).GetComponent<Health>();
         playerHealth.OnDie += Deactivate;
     }
     private void OnDisable() {

@@ -11,7 +11,6 @@ public class PauseButtonHandler : MonoBehaviour {
     private Image pauseImage;
     public static event Action<bool> OnPauseStateChanged;
 
-    // Start is called before the first frame update
     void Start() {
         pauseButton = GetComponent<Button>();
         pauseImage = GetComponent<Image>();

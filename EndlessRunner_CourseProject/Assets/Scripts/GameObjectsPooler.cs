@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate bool DeleteConditionDelegate(GameObject gameObject, Vector3 position);
+
 public class GameObjectsPooler : MonoBehaviour {
     [System.Serializable]
     public class Pool {
@@ -14,16 +16,18 @@ public class GameObjectsPooler : MonoBehaviour {
     public Dictionary<string, Queue<GameObject>> poolDictionary;
     public static GameObjectsPooler Instance;
 
+
+
     private void Awake() {
         Instance = this;
     }
     void Start() {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
-        foreach(Pool pool in pools) {
+        foreach (Pool pool in pools) {
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
-            for(int i = 0; i < pool.size; i++) {
+            for (int i = 0; i < pool.size; i++) {
                 GameObject go = Instantiate(pool.prefab);
                 go.SetActive(false);
                 objectPool.Enqueue(go);
@@ -60,5 +64,15 @@ public class GameObjectsPooler : MonoBehaviour {
     public void DeactivateGameObject(string tag, GameObject go) {
         go.SetActive(false);
         poolDictionary[tag].Enqueue(go);
+    }
+
+    public void DeactivateGameObjectByCondition(DeleteConditionDelegate condition, Vector3 position, string tag) {
+        foreach (GameObject go in poolDictionary[tag]) {
+            if (condition(go, position)) {
+                Debug.Log("delete " + tag);
+                // DeactivateGameObject(tag, go);
+                go.SetActive(false);
+            }
+        }
     }
 }

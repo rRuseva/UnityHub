@@ -33,11 +33,24 @@ public class PlayerMovementController : MonoBehaviour {
         transform.position = targetPosition;
     }
 
-    private void OnDisable() {
-        InputRecognizer.swipe -= OnMove;
+    private void OnEnable() {
+        PauseButtonHandler.OnPauseStateChanged += ChangeInputEventsSubscription;
     }
 
-    void OnMove(SwipeDirection direction) {
+    private void OnDisable() {
+        InputRecognizer.swipe -= OnMove;
+        PauseButtonHandler.OnPauseStateChanged -= ChangeInputEventsSubscription;
+    }
+
+    private void ChangeInputEventsSubscription(bool shouldUnsubscribe) {
+        if (shouldUnsubscribe) {
+            InputRecognizer.swipe -= OnMove;
+        } else {
+            InputRecognizer.swipe += OnMove;
+        }
+    }
+
+    private void OnMove(SwipeDirection direction) {
         if (IsSwipeDirectionHorizontal(direction)) {
             horizontalDistanceToMove = calculateDistanceToMove(direction);
         } else if (direction == SwipeDirection.Up) {
@@ -90,7 +103,7 @@ public class PlayerMovementController : MonoBehaviour {
 
         if (Physics.Raycast(origin, rayDirection,
                                 out RaycastHit hit, rayLength, mask, QueryTriggerInteraction.Collide)) {
-            if (hit.collider.tag.Equals("Ground")) {
+            if (hit.collider.tag.Equals(GameObjectsTags.GroundTag)) {
                 isGrounded = true;
             } else
                 isGrounded = false;
@@ -101,11 +114,11 @@ public class PlayerMovementController : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.CompareTag("Ground")) {
+        if (collision.gameObject.CompareTag(GameObjectsTags.GroundTag)) {
             isGrounded = true;
             verticalVelocity = 0;
         }
-        if (collision.gameObject.CompareTag("Lake")) {
+        if (collision.gameObject.CompareTag(GameObjectsTags.LakeTag)) {
             isGrounded = false;
             Fall();
         }

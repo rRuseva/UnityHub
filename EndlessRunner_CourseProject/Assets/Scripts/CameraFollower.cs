@@ -6,7 +6,7 @@ public class CameraFollower : MonoBehaviour {
     // the offset between the camera and the player before 'Play'
     private float offset;
     private void Start() {
-        playerTransform = GameObject.FindWithTag("Player").transform;
+        playerTransform = GameObject.FindWithTag(GameObjectsTags.PlayerTag).transform;
         offset = playerTransform.position.x - transform.position.x;
     }
 

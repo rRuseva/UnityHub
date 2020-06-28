@@ -11,7 +11,6 @@ public class BonusManager : MonoBehaviour
 	
     [SerializeField]
     private int distanceBetweenBonuses = 10;
-    private int safeZone = 18;
     private Transform playerTransofrm;
     private List<GameObject> activeBonuses;
 
@@ -22,7 +21,7 @@ public class BonusManager : MonoBehaviour
     public float interval = 2f;
 	
     private void OnEnable() {
-        playerTransofrm = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransofrm = GameObject.FindGameObjectWithTag(GameObjectsTags.PlayerTag).transform;
         activeBonuses = new List<GameObject>();
         //objPooler = GetComponent<ObjectPooler>();
     }
@@ -32,12 +31,12 @@ public class BonusManager : MonoBehaviour
         if (Time.time > nextActionTime) {
             nextActionTime += interval;
 
-            Vector3 newCoinPosition = new Vector3(playerTransofrm.position.x + 2 * safeZone, 0, 0);
+            Vector3 newCoinPosition = new Vector3(playerTransofrm.position.x + 2 * Constants.SAFE_ZONE, 0, 0);
             //SpawnCoins(newCoinPosition, -1);
             Debug.Log("coin 2");
 
         }
-        // if (playerTransofrm.position.x + safeZone < (spawnX)) {
+        // if (playerTransofrm.position.x + Constants.SAFE_ZONE < (spawnX)) {
             // DeleteBonus();
         // }
     }

@@ -10,7 +10,7 @@ public class DeathMenu : MonoBehaviour {
     private Button exitButton;
 
     void Start() {
-        //playerScore = GameObject.FindWithTag("Player").GetComponent<Score>();
+        //playerScore = GameObject.FindWithTag(GameObjectsTags.PlayerTag).GetComponent<Score>();
         //endScore = GetComponent<TextMeshProUGUI>();
         panel = gameObject.transform.Find(GameObjectsNames.DeathMenuPanelName).gameObject;
         playerScore.OnGameOverWithScore += ActivatePanel;
