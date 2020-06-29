@@ -1,27 +1,21 @@
 ﻿using UnityEngine;
 
 public class GameElementsSpawner : MonoBehaviour {
-    [SerializeField] private float minSecondsToNextGameElement = .4f;
-    [SerializeField] private float maxSecondsToNextGameElement = 1f;
     [SerializeField] private int minimumCoinCount = 3;
     [SerializeField] private int maximumCoinCount = 5;
     private readonly string[] ObstaclesTags = { GameObjectsTags.TreeTag, GameObjectsTags.SlantedTreeTag, GameObjectsTags.LakeTag };
     private readonly string[] BonusTags = { GameObjectsTags.CheeseTag, GameObjectsTags.CoinTag };
     private GameObjectsPooler objPooler;
-    private float nextActionTime = .0f;
     private Transform playerTransofrm;
-    private Vector3 previousGameElementPosition;
+    private float previousGameElementPositionX;
     private void Start() {
         objPooler = GameObjectsPooler.Instance;
         playerTransofrm = GameObject.FindGameObjectWithTag(GameObjectsTags.PlayerTag).transform;
+        previousGameElementPositionX = playerTransofrm.position.x;
     }
 
     private void Update() {
-        if (Time.time > nextActionTime) {
-            float nextInterval = Random.Range(minSecondsToNextGameElement, maxSecondsToNextGameElement);
-            nextActionTime += nextInterval;
-            //nextActionTime += 2;
-
+        if (previousGameElementPositionX - playerTransofrm.position.x <= 2 * Constants.SAFE_ZONE) {
             SpawnNewGameElement();
             RemoveOldGameElements();
         }
@@ -54,7 +48,7 @@ public class GameElementsSpawner : MonoBehaviour {
             horizontalPosition = Random.Range(-1, 1) * Constants.SINGLE_HORIZONTAL_MOVEMENT_DISTANCE;
         }
 
-        Vector3 newObstaclePosition = new Vector3(playerTransofrm.position.x + 2 * Constants.SAFE_ZONE, 0, horizontalPosition);
+        Vector3 newObstaclePosition = new Vector3(previousGameElementPositionX + Constants.MAX_OBJECT_LENGTH, 0, horizontalPosition);
         SpawnElements(newObstacleTag, 1, newObstaclePosition);
     }
 
@@ -63,16 +57,15 @@ public class GameElementsSpawner : MonoBehaviour {
         int count = Random.Range(minimumCoinCount, maximumCoinCount);
         string newBonusTag = ChooseBonusTag();
         float horizontalPosition = Random.Range(-1, 1) * Constants.SINGLE_HORIZONTAL_MOVEMENT_DISTANCE;
-        SpawnElements(newBonusTag, count, new Vector3(playerTransofrm.position.x + 2 * Constants.SAFE_ZONE, 0, horizontalPosition));
+
+        Vector3 newBonusPosition = new Vector3(previousGameElementPositionX + Constants.MAX_OBJECT_LENGTH, 0, horizontalPosition);
+        SpawnElements(newBonusTag, count, newBonusPosition);
     }
 
     private void SpawnElements(string tag, int count, Vector3 initialPosition) {
-        // това тук взема по-голямото от позицията на Player-a с отстояние и позицията на предишния обект с отстояние, но не работи
-        initialPosition.x = Mathf.Max(initialPosition.x, previousGameElementPosition.x + Constants.MAX_OBJECT_LENGTH);
-
         for (int i = 0; i < count; i++) {
             Vector3 newElementPosition = initialPosition + new Vector3(i, 0, 0);
-            previousGameElementPosition = newElementPosition;
+            previousGameElementPositionX = newElementPosition.x;
             SpawnElementOnPosition(tag, newElementPosition, Quaternion.identity);
         }
     }

@@ -3958,8 +3958,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee5e5c1dc84ae24bbb3ce0f9faa652e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSecondsToNextGameElement: 0.2
-  maxSecondsToNextGameElement: 1
+  minSecondsToNextGameElement: 0.4
+  maxSecondsToNextGameElement: 1.5
   minimumCoinCount: 3
   maximumCoinCount: 5
 --- !u!1001 &2129765217

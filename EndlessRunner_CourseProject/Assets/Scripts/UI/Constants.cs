@@ -8,7 +8,7 @@
     public static readonly float OFFSET_FROM_CENTER = 1.5f;
     public static readonly float SINGLE_HORIZONTAL_MOVEMENT_DISTANCE = 1.5f;
     public static readonly int SAFE_ZONE = 18;
-    public static readonly int MAX_OBJECT_LENGTH = 3;
+    public static readonly int MAX_OBJECT_LENGTH = 5;
 }
 
 public class GameObjectsNames {
