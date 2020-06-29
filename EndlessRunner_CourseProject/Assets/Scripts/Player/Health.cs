@@ -57,6 +57,9 @@ public class Health : MonoBehaviour {
             //call an action to disable the cheese
             collision.gameObject.SetActive(false);
         }
+        if (collision.gameObject.CompareTag(GameObjectsTags.LakeTag)) {
+            Die();
+        }
     }
 
     private bool IsFallingAndIsNotDead() {

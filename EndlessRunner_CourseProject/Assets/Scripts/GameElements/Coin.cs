@@ -12,7 +12,4 @@ public class Coin : MonoBehaviour, IPooledObject {
         transform.rotation = rotation;
     }
 
-    private void disableCoin() {
-        //start an animation 
-    }
 }

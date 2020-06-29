@@ -10,6 +10,7 @@ public class PlayerMovementController : MonoBehaviour {
     [SerializeField] private float gravity = 0.8f;
     [SerializeField] private float jumpVelocity = 0.4f;
     private Animator animator;
+
     private void Start() {
         InputRecognizer.swipe += OnMove;
         animator = GetComponent<Animator>();
@@ -76,7 +77,7 @@ public class PlayerMovementController : MonoBehaviour {
     }
 
     public void Jump() {
-        if (isGrounded) {
+        if (isGrounded && !AnimatorIsPlaying()) {
             animator.SetTrigger("Jump");
             AudioManager.PlayJumpSound();
             verticalVelocity += jumpVelocity;

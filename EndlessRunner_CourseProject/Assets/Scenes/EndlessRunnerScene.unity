@@ -3395,8 +3395,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runningForwardSpeed: 7
-  gravity: 0.99
-  jumpVelocity: 0.35
+  gravity: 0.9
+  jumpVelocity: 0.25
 --- !u!114 &1679962740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3431,7 +3431,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1679962738}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.26602983
   m_Height: 1.2788341
   m_Direction: 1
@@ -4038,6 +4038,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -59.776283
       objectReference: {fileID: 0}
+    - target: {fileID: 523046781784494052, guid: 492d072c832b1a4438308d2acda60663,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 558813050335881866, guid: 492d072c832b1a4438308d2acda60663,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4176,7 +4181,7 @@ PrefabInstance:
     - target: {fileID: 1621664267431971194, guid: 492d072c832b1a4438308d2acda60663,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1621664267431971199, guid: 492d072c832b1a4438308d2acda60663,
         type: 3}
