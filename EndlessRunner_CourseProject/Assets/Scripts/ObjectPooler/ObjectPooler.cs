@@ -30,10 +30,7 @@ public class ObjectPooler : MonoBehaviour
                 obj.SetActive(false);
                 pooledObjects.Add(obj);
             }
-
         }
-
-        
     }
 
     public GameObject GetPooledCleanPath() {

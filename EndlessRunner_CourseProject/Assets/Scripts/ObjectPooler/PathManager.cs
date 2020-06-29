@@ -6,14 +6,12 @@ using UnityEngine;
 
 public class PathManager : MonoBehaviour
 {
-
     private Transform playerTransofrm;
     private float spawnX = -10.0f;
     private float pathLenght = 10.0f;
     private int amnPathsOnScreen = 9;
     private List<GameObject> activePaths;
 
-    // Start is called before the first frame update
     void Start() {
         activePaths = new List<GameObject>();
         playerTransofrm = GameObject.FindGameObjectWithTag(GameObjectsTags.PlayerTag).transform;
@@ -29,7 +27,6 @@ public class PathManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update() { 
         if(playerTransofrm.position.x - Constants.SAFE_ZONE > (spawnX - amnPathsOnScreen * pathLenght)) {
             SpawnPath();

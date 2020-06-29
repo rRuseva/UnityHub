@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5590489213596987916}
   - component: {fileID: 2209544734610951925}
   - component: {fileID: 2573179889298120807}
-  - component: {fileID: 4462628321308048780}
   - component: {fileID: -140586126373810547}
   m_Layer: 0
   m_Name: Cheese
@@ -93,24 +92,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.03233243
-  m_Height: 0.10124194
-  m_Direction: 2
-  m_Center: {x: -0.042102017, y: -0.0060742497, z: 0.0016525447}
---- !u!136 &4462628321308048780
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474346040963643945}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.022183215
-  m_Height: 0.084363036
+  m_Radius: 0.03612854
+  m_Height: 0.076298945
   m_Direction: 1
-  m_Center: {x: 0.009450996, y: 0.0035120368, z: 0.00088558794}
+  m_Center: {x: -0.022576077, y: 0.00360955, z: -0.0015750468}
 --- !u!114 &-140586126373810547
 MonoBehaviour:
   m_ObjectHideFlags: 0
