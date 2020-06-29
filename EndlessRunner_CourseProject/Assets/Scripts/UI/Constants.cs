@@ -8,6 +8,7 @@
     public static readonly float OFFSET_FROM_CENTER = 1.5f;
     public static readonly float SINGLE_HORIZONTAL_MOVEMENT_DISTANCE = 1.5f;
     public static readonly int SAFE_ZONE = 18;
+    public static readonly int MAX_OBJECT_LENGTH = 3;
 }
 
 public class GameObjectsNames {
@@ -19,7 +20,11 @@ public class GameObjectsNames {
 
 public class GameObjectsTags {
     public static readonly string PlayerTag = "Player";
+    public static readonly string ObstacleTag = "Obstacle";
     public static readonly string GroundTag = "Ground";
     public static readonly string LakeTag = "Lake";
     public static readonly string TreeTag = "Tree";
+    public static readonly string SlantedTreeTag = "SlantedTree";
+    public static readonly string CheeseTag = "Cheese";
+    public static readonly string CoinTag = "Coin";
 }
