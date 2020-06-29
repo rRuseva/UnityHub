@@ -8,23 +8,10 @@ public class Score : MonoBehaviour {
     private static readonly int minScore = 0;
     private int score;
 
-    // Two temp fields to test Score UI:
-    private float nextActionTime = 0.0f;
-    public float interval = 4f;
-
     private void Start() {
         playerHealth = GameObject.FindWithTag(GameObjectsTags.PlayerTag).GetComponent<Health>();
         ChangeScore(minScore);
         playerHealth.OnDie += SaveScore;
-    }
-
-    private void Update() {
-
-        // Simulate the winning of bonuses for test purposes
-        //if (Time.time > nextActionTime) {
-        //    nextActionTime += interval;
-        //    EarnPoints(10);
-        //}
     }
 
     private void OnDisable() {
@@ -53,7 +40,7 @@ public class Score : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.CompareTag("Coin")) {
+        if (collision.gameObject.CompareTag(GameObjectsTags.CoinTag)) {
             EarnPoints(10);
             collision.gameObject.SetActive(false);
         }

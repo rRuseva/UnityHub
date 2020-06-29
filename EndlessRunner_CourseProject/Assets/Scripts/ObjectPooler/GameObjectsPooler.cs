@@ -16,8 +16,6 @@ public class GameObjectsPooler : MonoBehaviour {
     public Dictionary<string, Queue<GameObject>> poolDictionary;
     public static GameObjectsPooler Instance;
 
-
-
     private void Awake() {
         Instance = this;
     }
@@ -31,7 +29,6 @@ public class GameObjectsPooler : MonoBehaviour {
                 GameObject go = Instantiate(pool.prefab);
                 go.SetActive(false);
                 objectPool.Enqueue(go);
-
             }
 
             poolDictionary.Add(pool.tag, objectPool);
@@ -39,7 +36,6 @@ public class GameObjectsPooler : MonoBehaviour {
     }
 
     public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation) {
-
         if (!poolDictionary.ContainsKey(tag)) {
             Debug.LogWarning("Pool with tag" + tag + "doesn't exist!");
             return null;
@@ -69,8 +65,6 @@ public class GameObjectsPooler : MonoBehaviour {
     public void DeactivateGameObjectByCondition(DeleteConditionDelegate condition, Vector3 position, string tag) {
         foreach (GameObject go in poolDictionary[tag]) {
             if (condition(go, position)) {
-                Debug.Log("delete " + tag);
-                // DeactivateGameObject(tag, go);
                 go.SetActive(false);
             }
         }

@@ -2031,7 +2031,7 @@ BoxCollider:
   m_GameObject: {fileID: 491392601}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1.1827551, z: 0.6418215}
   m_Center: {x: -0.000000010278649, y: 0.2991805, z: -0.05177406}
@@ -2177,52 +2177,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 528941177}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &577776413
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 577776415}
-  - component: {fileID: 577776414}
-  m_Layer: 0
-  m_Name: BonusSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &577776414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577776413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 797d5eb1823677a47a2735f57f9c4f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minimumCoinCount: 3
-  maximumCoinCount: 5
-  interval: 2
---- !u!4 &577776415
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577776413}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &600761168
 GameObject:
   m_ObjectHideFlags: 0
@@ -5619,7 +5573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7609343348296b24bb91944cfedab98d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 4
 --- !u!114 &1679962741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5633,6 +5586,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camShake: {fileID: 718917886}
+--- !u!136 &1679962742
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679962738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 1.3
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!1001 &1736537237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6857,6 +6824,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2088452983}
   - component: {fileID: 2088452982}
+  - component: {fileID: 2088452984}
   m_Layer: 0
   m_Name: ObjectPooler
   m_TagString: Untagged
@@ -6884,7 +6852,7 @@ MonoBehaviour:
   - tag: Tree
     prefab: {fileID: 6699817519957490990, guid: 89ceb9773494cae41b6a9f59303f55c9,
       type: 3}
-    size: 8
+    size: 15
   - tag: SlantedTree
     prefab: {fileID: 8064525384275870930, guid: 62370ffbbeafcad40974f37f84e88e5d,
       type: 3}
@@ -6911,6 +6879,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2088452984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088452981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee5e5c1dc84ae24bbb3ce0f9faa652e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSecondsToNextGameElement: 0.2
+  maxSecondsToNextGameElement: 1
+  minimumCoinCount: 3
+  maximumCoinCount: 5
 --- !u!1001 &2129765217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7125,7 +7109,7 @@ PrefabInstance:
     - target: {fileID: 1621664267431971194, guid: 492d072c832b1a4438308d2acda60663,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1621664267431971199, guid: 492d072c832b1a4438308d2acda60663,
         type: 3}

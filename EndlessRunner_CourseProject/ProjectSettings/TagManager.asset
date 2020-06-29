@@ -8,7 +8,6 @@ TagManager:
   - Obstacle
   - Lake
   - Coin
-  - Tree
   - Bonus
   - Cheese
   layers:
