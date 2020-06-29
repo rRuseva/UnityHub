@@ -59,17 +59,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 139710, guid: f6d25eb84b31def4b8eed78cf75fda9c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 439710, guid: f6d25eb84b31def4b8eed78cf75fda9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 439710, guid: f6d25eb84b31def4b8eed78cf75fda9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.88
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 439710, guid: f6d25eb84b31def4b8eed78cf75fda9c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.14e-13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 439710, guid: f6d25eb84b31def4b8eed78cf75fda9c, type: 3}
       propertyPath: m_LocalRotation.x

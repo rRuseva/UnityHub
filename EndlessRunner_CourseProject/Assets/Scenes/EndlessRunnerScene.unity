@@ -1371,6 +1371,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.1929239, z: 0.53385544}
   m_Center: {x: -0.000000010043463, y: 0.2940961, z: -0.042071406}
+--- !u!1 &534195793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 534195795}
+  - component: {fileID: 534195794}
+  m_Layer: 0
+  m_Name: GameElementsSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &534195794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534195793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee5e5c1dc84ae24bbb3ce0f9faa652e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumCoinCount: 3
+  maximumCoinCount: 5
+--- !u!4 &534195795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534195793}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &600761168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,51 +1996,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781795151}
   m_CullTransparentMesh: 0
---- !u!1 &1032881829
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1032881831}
-  - component: {fileID: 1032881830}
-  m_Layer: 0
-  m_Name: ObstacleSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1032881830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032881829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e18a1a6befda1a46857d7db78ec7a66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minSecondsToNextObstacle: 2.3
-  maxSecondsToNextObstacle: 3
---- !u!4 &1032881831
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032881829}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1076244947
 GameObject:
   m_ObjectHideFlags: 0
@@ -3891,7 +3891,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2088452983}
   - component: {fileID: 2088452982}
-  - component: {fileID: 2088452984}
   m_Layer: 0
   m_Name: ObjectPooler
   m_TagString: Untagged
@@ -3915,7 +3914,7 @@ MonoBehaviour:
   - tag: Coin
     prefab: {fileID: 1007711899039389793, guid: 545f2db61acc3c64b9ed935d0b459154,
       type: 3}
-    size: 15
+    size: 20
   - tag: Tree
     prefab: {fileID: 6699817519957490990, guid: 89ceb9773494cae41b6a9f59303f55c9,
       type: 3}
@@ -3946,22 +3945,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2088452984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088452981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eee5e5c1dc84ae24bbb3ce0f9faa652e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minSecondsToNextGameElement: 0.4
-  maxSecondsToNextGameElement: 1.5
-  minimumCoinCount: 3
-  maximumCoinCount: 5
 --- !u!1001 &2129765217
 PrefabInstance:
   m_ObjectHideFlags: 0
