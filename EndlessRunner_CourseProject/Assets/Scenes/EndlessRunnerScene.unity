@@ -906,7 +906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32d0c6edbdb599498e2bd5fc90cd48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScore: {fileID: 1679962740}
+  playerHealth: {fileID: 1679962741}
   endScore: {fileID: 1076244951}
 --- !u!1 &233170167
 GameObject:
@@ -3520,6 +3520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camShake: {fileID: 718917886}
+  playerScore: {fileID: 1679962740}
 --- !u!136 &1679962742
 CapsuleCollider:
   m_ObjectHideFlags: 0

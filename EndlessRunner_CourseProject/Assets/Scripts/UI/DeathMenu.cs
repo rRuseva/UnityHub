@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 public class DeathMenu : MonoBehaviour {
-    [SerializeField] private Score playerScore = null;
+    [SerializeField] private Health playerHealth = null;
     [SerializeField] private TextMeshProUGUI endScore = null;
     private GameObject panel = null;
     private Button playButton;
@@ -10,16 +10,14 @@ public class DeathMenu : MonoBehaviour {
     private Button exitButton;
 
     void Start() {
-        //playerScore = GameObject.FindWithTag(GameObjectsTags.PlayerTag).GetComponent<Score>();
-        //endScore = GetComponent<TextMeshProUGUI>();
         panel = gameObject.transform.Find(GameObjectsNames.DeathMenuPanelName).gameObject;
-        playerScore.OnGameOverWithScore += ActivatePanel;
+        playerHealth.OnDieWithScore += ActivatePanel;
         DeactivatePanel();
         InitButtons();
     }
 
     private void OnDisable() {
-        playerScore.OnGameOverWithScore -= ActivatePanel;
+        playerHealth.OnDieWithScore -= ActivatePanel;
     }
 
     private void ActivatePanel(int score) {

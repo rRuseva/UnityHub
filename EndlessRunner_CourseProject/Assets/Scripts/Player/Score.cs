@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class Score : MonoBehaviour {
     public event Action<int> OnScoreChanged;
-    public event Action<int> OnGameOverWithScore;
-    private Health playerHealth; // todo - find a better way to detect when the player dies and the game finishes
+    private Health playerHealth;
     private static readonly int minScore = 0;
-    private int score;
+    public int score {
+        get; private set;
+    }
 
     private void Start() {
         playerHealth = GameObject.FindWithTag(GameObjectsTags.PlayerTag).GetComponent<Health>();
@@ -23,7 +24,6 @@ public class Score : MonoBehaviour {
         if (score > maxScoreValue) {
             PlayerPrefs.SetInt(Constants.MAX_SCORE_PLAYER_PREFS, score);
         }
-        OnGameOverWithScore?.Invoke(score);
     }
 
     private void EarnPoints(int pointsToAdd) {

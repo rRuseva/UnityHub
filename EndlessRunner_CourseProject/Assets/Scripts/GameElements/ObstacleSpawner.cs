@@ -18,7 +18,6 @@ public class ObstacleSpawner : MonoBehaviour {
             float nextInterval = Random.Range(minSecondsToNextObstacle, maxSecondsToNextObstacle);
             nextActionTime += nextInterval;
             SpawnNewObstacle();
-            //това не трябва ли да се вика поне с някакъв delay; май за това изчезват елементи преди да сме стигнали до тях;
             RemoveOldObstacles();
         }
     }

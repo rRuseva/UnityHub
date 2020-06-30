@@ -4,9 +4,11 @@ using static UnityEngine.Mathf;
 
 public class Health : MonoBehaviour {
     public event Action<int> OnHealthChanged;
+    public event Action<int> OnDieWithScore;
     public event Action OnDie;
     private int health;
     public CameraShake camShake;
+    [SerializeField] private Score playerScore;
     private void Start() {
         ChangeHealth(Constants.MAX_HEALTH);
     }
@@ -36,6 +38,8 @@ public class Health : MonoBehaviour {
 
     private void Die() {
         OnDie?.Invoke();
+        int score = playerScore.score;
+        OnDieWithScore?.Invoke(score);
         Destroy(gameObject);
     }
 
