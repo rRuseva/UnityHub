@@ -52,7 +52,7 @@ public class Health : MonoBehaviour {
             StartCoroutine(camShake.Shake());
         }
         if (collision.gameObject.CompareTag(GameObjectsTags.CheeseTag)) {
-            Debug.Log("Cheese");
+            AudioManager.PlayEatCheeseSound();
             Heal(5);
             //call an action to disable the cheese
             collision.gameObject.SetActive(false);

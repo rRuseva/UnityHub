@@ -41,6 +41,7 @@ public class Score : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag(GameObjectsTags.CoinTag)) {
+            AudioManager.PlayEarnCoinSound();
             EarnPoints(10);
             collision.gameObject.SetActive(false);
         }

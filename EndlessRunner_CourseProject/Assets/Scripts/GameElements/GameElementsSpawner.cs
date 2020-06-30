@@ -7,15 +7,15 @@ public class GameElementsSpawner : MonoBehaviour {
     private readonly string[] BonusTags = { GameObjectsTags.CheeseTag, GameObjectsTags.CoinTag };
     private GameObjectsPooler objPooler;
     private Transform playerTransofrm;
-    private float previousGameElementPositionX;
+    private float nextGameElementPositionX;
     private void Start() {
         objPooler = GameObjectsPooler.Instance;
         playerTransofrm = GameObject.FindGameObjectWithTag(GameObjectsTags.PlayerTag).transform;
-        previousGameElementPositionX = playerTransofrm.position.x;
+        nextGameElementPositionX = playerTransofrm.position.x;
     }
 
     private void Update() {
-        if (previousGameElementPositionX - playerTransofrm.position.x <= 2 * Constants.SAFE_ZONE) {
+        if (nextGameElementPositionX - playerTransofrm.position.x <= 2 * Constants.SAFE_ZONE) {
             SpawnNewGameElement();
             RemoveOldGameElements();
         }
@@ -48,7 +48,7 @@ public class GameElementsSpawner : MonoBehaviour {
             horizontalPosition = Random.Range(-1, 1) * Constants.SINGLE_HORIZONTAL_MOVEMENT_DISTANCE;
         }
 
-        Vector3 newObstaclePosition = new Vector3(previousGameElementPositionX + Constants.MAX_OBJECT_LENGTH, 0, horizontalPosition);
+        Vector3 newObstaclePosition = new Vector3(nextGameElementPositionX, 0, horizontalPosition);
         SpawnElements(newObstacleTag, 1, newObstaclePosition);
     }
 
@@ -58,16 +58,17 @@ public class GameElementsSpawner : MonoBehaviour {
         string newBonusTag = ChooseBonusTag();
         float horizontalPosition = Random.Range(-1, 1) * Constants.SINGLE_HORIZONTAL_MOVEMENT_DISTANCE;
 
-        Vector3 newBonusPosition = new Vector3(previousGameElementPositionX + Constants.MAX_OBJECT_LENGTH, 0, horizontalPosition);
+        Vector3 newBonusPosition = new Vector3(nextGameElementPositionX, 0, horizontalPosition);
         SpawnElements(newBonusTag, count, newBonusPosition);
     }
 
     private void SpawnElements(string tag, int count, Vector3 initialPosition) {
+        Vector3 lastElementPosition = initialPosition;
         for (int i = 0; i < count; i++) {
-            Vector3 newElementPosition = initialPosition + new Vector3(i, 0, 0);
-            previousGameElementPositionX = newElementPosition.x;
-            SpawnElementOnPosition(tag, newElementPosition, Quaternion.identity);
+            lastElementPosition = initialPosition + new Vector3(i, 0, 0);
+            SpawnElementOnPosition(tag, lastElementPosition, Quaternion.identity);
         }
+        nextGameElementPositionX = lastElementPosition.x + ChooseDistanceForTag(tag);
     }
 
     private void SpawnElementOnPosition(string tag, Vector3 position, Quaternion rotation) {
@@ -79,11 +80,19 @@ public class GameElementsSpawner : MonoBehaviour {
     }
 
     private bool DeactivateByCondition(GameObject go, Vector3 playerPosition) {
-        return go.transform.position.x + 3 * Constants.SAFE_ZONE < playerPosition.x;
+        return go.transform.position.x + Constants.SAFE_ZONE < playerPosition.x;
     }
 
     private string ChooseRandomGameElementTag(string[] tags) {
         return tags[Random.Range(0, tags.Length)];
+    }
+
+    private float ChooseDistanceForTag(string tag) {
+        if (tag == GameObjectsTags.LakeTag) {
+            return Constants.DISTANCE_AFTER_LAKE;
+        } else {
+            return Constants.DISTANCE_AFTER_GAME_ELEMENT;
+        }
     }
 
     private string ChooseBonusTag() {

@@ -4,6 +4,7 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioSource clickButtonSound = null;
     [SerializeField] private AudioSource crashTreeSound = null;
     [SerializeField] private AudioSource earnCoinSound = null;
+    [SerializeField] private AudioSource eatCheeseSound = null;
     [SerializeField] private AudioSource jumpSound = null;
     [SerializeField] private AudioSource fallSound = null;
 
@@ -40,6 +41,10 @@ public class AudioManager : MonoBehaviour {
 
     public static void PlayEarnCoinSound() {
         if (SoundOn) { instance.earnCoinSound.Play(); }
+    }
+
+    public static void PlayEatCheeseSound() {
+        if (SoundOn) { instance.eatCheeseSound.Play(); }
     }
 
     public static void PlayJumpSound() {
