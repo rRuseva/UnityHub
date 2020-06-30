@@ -95,25 +95,7 @@ public class PlayerMovementController : MonoBehaviour {
         verticalVelocity -= gravity * Time.deltaTime;
     }
 
-    // private bool isOnGround() {
-    //     int mask = LayerMask.GetMask("Default");
-    //     float rayLength = 0.99f;
-    //     Vector3 origin = transform.position + new Vector3(0, 0.5f, 0);
-
-    //     Vector3 rayDirection = new Vector3(0, -1, 0);
-
-    //     if (Physics.Raycast(origin, rayDirection,
-    //                             out RaycastHit hit, rayLength, mask, QueryTriggerInteraction.Collide)) {
-    //         if (hit.collider.tag.Equals(GameObjectsTags.GroundTag)) {
-    //             isGrounded = true;
-    //         } else
-    //             isGrounded = false;
-
-    //     }
-    //     isGrounded = false;
-    //     return isGrounded;
-    // }
-
+    
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag(GameObjectsTags.GroundTag)) {
             isGrounded = true;
