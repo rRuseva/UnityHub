@@ -4234,6 +4234,16 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 1621664267431971192, guid: 492d072c832b1a4438308d2acda60663,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621664267431971192, guid: 492d072c832b1a4438308d2acda60663,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1621664267431971194, guid: 492d072c832b1a4438308d2acda60663,
         type: 3}
       propertyPath: m_Size.x
@@ -4703,6 +4713,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -74.151
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143781073498622348, guid: 492d072c832b1a4438308d2acda60663,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7171562208885496337, guid: 492d072c832b1a4438308d2acda60663,
         type: 3}

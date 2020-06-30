@@ -15,9 +15,12 @@ public class GameElementsSpawner : MonoBehaviour {
     }
 
     private void Update() {
-        if (nextGameElementPositionX - playerTransofrm.position.x <= 2 * Constants.SAFE_ZONE) {
-            SpawnNewGameElement();
-            RemoveOldGameElements();
+
+        if (playerTransofrm != null) {
+            if (nextGameElementPositionX - playerTransofrm.position.x <= 2 * Constants.SAFE_ZONE) {
+                SpawnNewGameElement();
+                RemoveOldGameElements();
+            }
         }
     }
 

@@ -15,7 +15,6 @@ public class PathManager : MonoBehaviour
     void Start() {
         activePaths = new List<GameObject>();
         playerTransofrm = GameObject.FindGameObjectWithTag(GameObjectsTags.PlayerTag).transform;
-        
 
         for(int i = 0; i < amnPathsOnScreen; i++) {
             // the first 4 paths infront will always be a clean paths (with no obstacle)
@@ -27,10 +26,13 @@ public class PathManager : MonoBehaviour
         }
     }
 
-    void Update() { 
-        if(playerTransofrm.position.x - Constants.SAFE_ZONE > (spawnX - amnPathsOnScreen * pathLenght)) {
-            SpawnPath();
-            DeletePath();
+    void Update() {
+
+        if (playerTransofrm != null) {
+            if (playerTransofrm.position.x - Constants.SAFE_ZONE > (spawnX - amnPathsOnScreen * pathLenght)) {
+                SpawnPath();
+                DeletePath();
+            }
         }
     }
 
