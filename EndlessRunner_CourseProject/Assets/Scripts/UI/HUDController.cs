@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 
 public class HUDController : MonoBehaviour {
-    private Health playerHealth = null;
+    [SerializeField] private Health playerHealth;
 
     private void Start() {
-        playerHealth = GameObject.FindWithTag(GameObjectsTags.PlayerTag).GetComponent<Health>();
         playerHealth.OnDie += Deactivate;
     }
     private void OnDisable() {
