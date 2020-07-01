@@ -10,6 +10,7 @@
     public static readonly int SAFE_ZONE = 18;
     public static readonly int DISTANCE_AFTER_GAME_ELEMENT = 5;
     public static readonly int DISTANCE_AFTER_LAKE = 10;
+    public static readonly int HEALTH_DAMAGE = 5; 
 }
 
 public class GameObjectsNames {

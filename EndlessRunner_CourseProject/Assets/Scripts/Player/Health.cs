@@ -13,60 +13,53 @@ public class Health : MonoBehaviour {
         ChangeHealth(Constants.MAX_HEALTH);
     }
 
-    private void Update() {
-        if (IsFallingAndIsNotDead()) {
-            AudioManager.PlayFallSound();
-            TakeDamage(health);
-        }
-    }
 
     private void TakeDamage(int damage) {
         int newHealth = health - damage;
+
+        ChangeHealth(newHealth);
         if (newHealth <= 0) {
             Die();
-        } else {
-            ChangeHealth(newHealth);
-        }
+        } 
     }
 
     private void Heal(int amount) {
         int newHealth = health + amount;
-        if (newHealth <= Constants.MAX_HEALTH) {
+        if (newHealth < Constants.MAX_HEALTH) {
             ChangeHealth(newHealth);
         }
     }
 
     private void Die() {
-        OnDie?.Invoke();
         int score = playerScore.score;
+        OnDie?.Invoke();
         OnDieWithScore?.Invoke(score);
         Destroy(gameObject);
     }
 
     private void ChangeHealth(int newHealth) {
-        health = Clamp(newHealth, 0, Constants.MAX_HEALTH);
-        OnHealthChanged?.Invoke(health);
+        int newValidatedHealth = Clamp(newHealth, 0, Constants.MAX_HEALTH);
+        if (health != newValidatedHealth) {
+            health = newValidatedHealth;
+            OnHealthChanged?.Invoke(health);
+        }
     }
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag(GameObjectsTags.ObstacleTag)) {
             AudioManager.PlayCrashTreeSound();
-            TakeDamage(5);
+            TakeDamage(Constants.HEALTH_DAMAGE);
             Handheld.Vibrate();
             StartCoroutine(camShake.Shake());
         }
         if (collision.gameObject.CompareTag(GameObjectsTags.CheeseTag)) {
             AudioManager.PlayEatCheeseSound();
-            Heal(5);
-            //call an action to disable the cheese
+            Heal(Constants.HEALTH_DAMAGE);
+            //deactivate the game element to be added to the pool
             collision.gameObject.SetActive(false);
         }
-        if (collision.gameObject.CompareTag(GameObjectsTags.LakeTag)) {
-            Die();
-        }
-    }
-
-    private bool IsFallingAndIsNotDead() {
-        return transform.position.y < -3 && health > 0;
+        //if (collision.gameObject.CompareTag(GameObjectsTags.LakeTag)) {
+        //    Die();
+        //}
     }
 }
