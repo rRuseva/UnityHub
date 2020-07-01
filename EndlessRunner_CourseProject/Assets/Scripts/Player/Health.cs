@@ -38,11 +38,8 @@ public class Health : MonoBehaviour {
     }
 
     private void ChangeHealth(int newHealth) {
-        int newValidatedHealth = Clamp(newHealth, 0, Constants.MAX_HEALTH);
-        if (health != newValidatedHealth) {
-            health = newValidatedHealth;
-            OnHealthChanged?.Invoke(health);
-        }
+        health = Clamp(newHealth, 0, Constants.MAX_HEALTH);
+        OnHealthChanged?.Invoke(health);
     }
 
     private void OnCollisionEnter(Collision collision) {
