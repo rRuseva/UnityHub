@@ -10,30 +10,31 @@ public class SwipeGestureRecognizer : MonoBehaviour {
         if (Input.touchCount == 0)
             return;
 
-        if (Input.GetTouch(0).deltaPosition.sqrMagnitude != 0) {
+        Touch touch = Input.GetTouch(0);
+        if (touch.deltaPosition.sqrMagnitude != 0) {
             if (swiping == false) {
                 swiping = true;
-                lastPosition = Input.GetTouch(0).position;
+                lastPosition = touch.position;
                 return;
             } else if (!eventSent) {
                 Vector2 direction = Input.GetTouch(0).position - lastPosition;
-
-                if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y)) {
-                    if (direction.x > 0)
-                        InputRecognizer.OnSwipe(SwipeDirection.Right);
-                    else
-                        InputRecognizer.OnSwipe(SwipeDirection.Left);
-                } else {
-                    if (direction.y > 0)
-                        InputRecognizer.OnSwipe(SwipeDirection.Up);
-                    else
-                        InputRecognizer.OnSwipe(SwipeDirection.Down);
-                }
+                SendSwipeEvent(direction);
                 eventSent = true;
             }
-        } else {
+        }
+        if (touch.phase == TouchPhase.Ended && eventSent) {
             swiping = false;
             eventSent = false;
         }
+    }
+
+    private void SendSwipeEvent(Vector3 direction) {
+        SwipeDirection swipeDirection;
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y)) {
+            swipeDirection = direction.x > 0 ? SwipeDirection.Right : SwipeDirection.Left;
+        } else {
+            swipeDirection = direction.y > 0 ? SwipeDirection.Up : SwipeDirection.Down;
+        }
+        InputRecognizer.OnSwipe(swipeDirection);
     }
 }
