@@ -2,6 +2,8 @@
 
 An endless runner game, developed for a mobile device. You can try the apk.
 
+![](Demo/Mousey.gif)   ![](Demo/GameOver.gif)
+
 ### Summary of functionalities:
 #### UI
 - Main menu - a separate scene showing the player name, max score and with option to mute the game.  
