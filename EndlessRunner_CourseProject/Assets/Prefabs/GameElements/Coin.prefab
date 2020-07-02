@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a46e2caf2396ea4abb2b9f7f92ec7b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 100
+  RotationSpeed: 200
 --- !u!136 &5243137364771265400
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -57,9 +57,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.043915536
-  m_Height: 1.077312
+  m_Height: 1.0644732
   m_Direction: 1
-  m_Center: {x: -0.006467942, y: 1.1789393, z: 0}
+  m_Center: {x: -0.006467942, y: 1.1853588, z: 0}
 --- !u!1 &3114833038923310963
 GameObject:
   m_ObjectHideFlags: 0

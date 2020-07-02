@@ -5,7 +5,7 @@ using System;
 
 public class Coin : MonoBehaviour, IPooledObject {
 
-    public float RotationSpeed = 20.0f;
+    public float RotationSpeed = 200.0f;
     public void OnObjectSpawn() {
         if (UnityEngine.Random.value >= 0.5) {
             Vector3 rot = this.transform.rotation.eulerAngles;
