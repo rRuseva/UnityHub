@@ -11,7 +11,7 @@ public class GameElementsSpawner : MonoBehaviour {
     private void Start() {
         objPooler = GameObjectsPooler.Instance;
         playerTransofrm = GameObject.FindGameObjectWithTag(GameObjectsTags.PlayerTag).transform;
-        nextGameElementPositionX = playerTransofrm.position.x;
+        nextGameElementPositionX = playerTransofrm.position.x + Constants.DISTANCE_AFTER_GAME_ELEMENT;
     }
 
     private void Update() {

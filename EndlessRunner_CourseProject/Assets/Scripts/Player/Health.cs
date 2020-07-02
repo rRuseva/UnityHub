@@ -13,19 +13,18 @@ public class Health : MonoBehaviour {
         ChangeHealth(Constants.MAX_HEALTH);
     }
 
-
     private void TakeDamage(int damage) {
         int newHealth = health - damage;
 
         ChangeHealth(newHealth);
         if (newHealth <= 0) {
             Die();
-        } 
+        }
     }
 
     private void Heal(int amount) {
         int newHealth = health + amount;
-        if (newHealth < Constants.MAX_HEALTH) {
+        if (newHealth <= Constants.MAX_HEALTH) {
             ChangeHealth(newHealth);
         }
     }
@@ -55,8 +54,5 @@ public class Health : MonoBehaviour {
             //deactivate the game element to be added to the pool
             collision.gameObject.SetActive(false);
         }
-        //if (collision.gameObject.CompareTag(GameObjectsTags.LakeTag)) {
-        //    Die();
-        //}
     }
 }
