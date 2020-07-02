@@ -11,7 +11,7 @@ public class GameElementsSpawner : MonoBehaviour {
     private void Start() {
         objPooler = GameObjectsPooler.Instance;
         playerTransofrm = GameObject.FindGameObjectWithTag(GameObjectsTags.PlayerTag).transform;
-        nextGameElementPositionX = playerTransofrm.position.x + Constants.DISTANCE_AFTER_GAME_ELEMENT;
+        nextGameElementPositionX = playerTransofrm.position.x + Constants.DISTANCE_AFTER_BIGGER_GAME_ELEMENT;
     }
 
     private void Update() {
@@ -48,7 +48,7 @@ public class GameElementsSpawner : MonoBehaviour {
 
         // slanted trees and lakes should be always on 0 position by horizontal axis (Z)
         if (newObstacleTag == GameObjectsTags.TreeTag) {
-            horizontalPosition = Random.Range(-1, 1) * Constants.SINGLE_HORIZONTAL_MOVEMENT_DISTANCE;
+            horizontalPosition = ChooseRandomHorizontalPosition();
         }
 
         Vector3 newObstaclePosition = new Vector3(nextGameElementPositionX, 0, horizontalPosition);
@@ -59,7 +59,7 @@ public class GameElementsSpawner : MonoBehaviour {
         //choose random number of bonus elements and random element from all tags;
         int count = Random.Range(minimumCoinCount, maximumCoinCount);
         string newBonusTag = ChooseBonusTag();
-        float horizontalPosition = Random.Range(-1, 1) * Constants.SINGLE_HORIZONTAL_MOVEMENT_DISTANCE;
+        float horizontalPosition = ChooseRandomHorizontalPosition();
 
         Vector3 newBonusPosition = new Vector3(nextGameElementPositionX, 0, horizontalPosition);
         SpawnElements(newBonusTag, count, newBonusPosition);
@@ -91,10 +91,10 @@ public class GameElementsSpawner : MonoBehaviour {
     }
 
     private float ChooseDistanceForTag(string tag) {
-        if (tag == GameObjectsTags.LakeTag) {
-            return Constants.DISTANCE_AFTER_LAKE;
+        if (tag == GameObjectsTags.LakeTag || tag == GameObjectsTags.SlantedTreeTag) {
+            return Constants.DISTANCE_AFTER_BIGGER_GAME_ELEMENT;
         } else {
-            return Constants.DISTANCE_AFTER_GAME_ELEMENT;
+            return Constants.DISTANCE_AFTER_SMALLER_GAME_ELEMENT;
         }
     }
 
@@ -118,5 +118,9 @@ public class GameElementsSpawner : MonoBehaviour {
 
     private bool randomBoolean() {
         return Random.value >= 0.5;
+    }
+
+    private float ChooseRandomHorizontalPosition() {
+        return Random.Range(-1, 2) * Constants.SINGLE_HORIZONTAL_MOVEMENT_DISTANCE;
     }
 }

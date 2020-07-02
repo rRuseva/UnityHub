@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3821398418092894084}
+  - component: {fileID: 8531173293250492173}
+  - component: {fileID: 6488581249751539440}
   m_Layer: 0
   m_Name: CheeseBonus
   m_TagString: Cheese
@@ -31,6 +33,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8531173293250492173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297881815486052137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a607292602accf419e18be7fae4c544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &6488581249751539440
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297881815486052137}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.037762273
+  m_Height: 0.088051915
+  m_Direction: 1
+  m_Center: {x: -0.022199064, y: 0.000747931, z: -0.0019520939}
 --- !u!1001 &6538860243477353612
 PrefabInstance:
   m_ObjectHideFlags: 0

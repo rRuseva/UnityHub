@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4422736456062996818}
   - component: {fileID: 2576695883095442879}
+  - component: {fileID: 5243137364771265400}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -44,6 +45,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a46e2caf2396ea4abb2b9f7f92ec7b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &5243137364771265400
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007711899039389793}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 1
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3114833038923310963
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,7 +70,6 @@ GameObject:
   - component: {fileID: 7768208075965391036}
   - component: {fileID: 2746074316213696645}
   - component: {fileID: 732164847439582453}
-  - component: {fileID: 7145642188007228459}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Coin
@@ -124,17 +138,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &7145642188007228459
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3114833038923310963}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.2
-  m_Height: 1
-  m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}

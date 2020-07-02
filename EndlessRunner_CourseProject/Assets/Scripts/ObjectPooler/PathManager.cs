@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PathManager : MonoBehaviour
-{
+public class PathManager : MonoBehaviour {
     private Transform playerTransofrm;
     private float spawnX = -10.0f;
     private float pathLenght = 10.0f;
@@ -16,13 +15,8 @@ public class PathManager : MonoBehaviour
         activePaths = new List<GameObject>();
         playerTransofrm = GameObject.FindGameObjectWithTag(GameObjectsTags.PlayerTag).transform;
 
-        for(int i = 0; i < amnPathsOnScreen; i++) {
-            // the first 4 paths infront will always be a clean paths (with no obstacle)
-            if (i < 4) {
-                SpawnPath(0);
-            }
-            else
-                SpawnPath();
+        for (int i = 0; i < amnPathsOnScreen; i++) {
+            SpawnPath();
         }
     }
 
@@ -36,9 +30,8 @@ public class PathManager : MonoBehaviour
         }
     }
 
-    private void SpawnPath(int prefabIndex = -1) {
+    private void SpawnPath() {
         GameObject go;
-      //  go = ObjectPooler.SharedInstance.GetPooledObject(GameObjectsTags.GroundTag, prefabIndex);
         go = ObjectPooler.SharedInstance.GetPooledCleanPath();
         if (go != null) {
             go.SetActive(true);

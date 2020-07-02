@@ -51,7 +51,6 @@ public class Health : MonoBehaviour {
         if (collision.gameObject.CompareTag(GameObjectsTags.CheeseTag)) {
             AudioManager.PlayEatCheeseSound();
             Heal(Constants.HEALTH_DAMAGE);
-            //deactivate the game element to be added to the pool
             collision.gameObject.SetActive(false);
         }
     }

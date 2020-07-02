@@ -3,13 +3,13 @@
 public class PlayerMovementController : MonoBehaviour {
     [SerializeField] private float runningForwardSpeed = 7;
     private float horizontalDistanceToMove = 0;
+    private Animator animator;
 
     //vertical movement: 
     private bool isGrounded = true;
     private float verticalVelocity = 0.0f;
     [SerializeField] private float gravity = 0.8f;
     [SerializeField] private float jumpVelocity = 0.4f;
-    private Animator animator;
 
     private void Start() {
         InputRecognizer.swipe += OnMove;

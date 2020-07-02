@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public delegate bool DeleteConditionDelegate(GameObject gameObject, Vector3 position);
@@ -55,11 +54,6 @@ public class GameObjectsPooler : MonoBehaviour {
         poolDictionary[tag].Enqueue(goToSpawn);
 
         return goToSpawn;
-    }
-
-    public void DeactivateGameObject(string tag, GameObject go) {
-        go.SetActive(false);
-        //poolDictionary[tag].Enqueue(go);
     }
 
     public void DeactivateGameObjectByCondition(DeleteConditionDelegate condition, Vector3 position, string tag) {
