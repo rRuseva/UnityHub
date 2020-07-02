@@ -3,14 +3,13 @@ using UnityEngine;
 
 public class Score : MonoBehaviour {
     public event Action<int> OnScoreChanged;
-    private Health playerHealth;
+    [SerializeField] private Health playerHealth;
     private static readonly int minScore = 0;
     public int score {
         get; private set;
     }
 
     private void Start() {
-        playerHealth = GameObject.FindWithTag(GameObjectsTags.PlayerTag).GetComponent<Health>();
         ChangeScore(minScore);
         playerHealth.OnDie += SaveScore;
     }
