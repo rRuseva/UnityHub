@@ -2781,7 +2781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d3063944eded343a9c655d754b46aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runningForwardSpeed: 7
+  runningForwardSpeed: 9
   gravity: 0.9
   jumpVelocity: 0.25
 --- !u!114 &1679962740

@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074785098700240161}
-  m_LocalRotation: {x: 0.62369746, y: 0.09611383, z: 0.06136683, w: 0.7733032}
-  m_LocalPosition: {x: 0.011868179, y: -0.2565535, z: -4.7098193}
+  m_LocalRotation: {x: 0.68323946, y: 0.084527016, z: 0.06142205, w: 0.72268003}
+  m_LocalPosition: {x: 0.014277995, y: 0.34334016, z: -4.510308}
   m_LocalScale: {x: 0.54945, y: 0.6828855, z: 0.38874355}
   m_Children:
   - {fileID: 2594802773032725214}
@@ -37,7 +37,7 @@ Transform:
   - {fileID: 511530083175578445}
   m_Father: {fileID: 8064525384275870929}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 107.67, y: -132.106, z: -134.956}
+  m_LocalEulerAnglesHint: {x: 102.27399, y: -104.181, z: -106.063995}
 --- !u!205 &2514091900849476086
 LODGroup:
   m_ObjectHideFlags: 0
@@ -256,8 +256,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0435154, y: 1.1566441, z: 1}
+  m_Center: {x: 0.106613256, y: -0.35227555, z: -0.051853497}
 --- !u!1 &8064525384275870930
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8064525384275870929}
+  - component: {fileID: 1340247818979041449}
   m_Layer: 0
   m_Name: slantedTreeObstacle
   m_TagString: Obstacle
@@ -289,6 +290,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -1.7570001, y: -10.403001, z: 0.323}
+--- !u!114 &1340247818979041449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8064525384275870930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec916695eaba67f458f507b2ecf331ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8176899481367565468
 GameObject:
   m_ObjectHideFlags: 0
