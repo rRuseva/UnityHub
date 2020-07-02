@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Obstacle
+  - Lake
+  - Coin
+  - Bonus
+  - Cheese
   layers:
   - Default
   - TransparentFX
