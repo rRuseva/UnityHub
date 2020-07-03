@@ -1,8 +1,8 @@
-# Mousey the runner
+# Moussey the runner
 
 An endless runner game, developed for a mobile device. You can try the apk.
 
-![](Demo/Mousey.gif)   ![](Demo/GameOver.gif)
+![](Demo/MousseyTheRunner_Demo.gif)   ![](Demo/Moussey_GameOver_demo.gif)
 
 ### Summary of functionalities:
 #### UI
