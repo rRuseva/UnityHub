@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour {
-    [SerializeField] private float runningForwardSpeed = 7;
+    [SerializeField] private float runningForwardSpeed = 9;
     private float horizontalDistanceToMove = 0;
     private Animator animator;
 
     //vertical movement: 
     private bool isGrounded = true;
     private float verticalVelocity = 0.0f;
-    [SerializeField] private float gravity = 0.8f;
-    [SerializeField] private float jumpVelocity = 0.4f;
+    //[SerializeField] 
+    private float gravity = 0.9f;
+    //[SerializeField] 
+    private float jumpVelocity = 0.18f;
 
     private void Start() {
         InputRecognizer.swipe += OnMove;
@@ -27,7 +29,7 @@ public class PlayerMovementController : MonoBehaviour {
             Fall();
         }
 
-        Vector3 moveVerticalDirection = new Vector3(0, verticalVelocity, 0);
+        Vector3 moveVerticalDirection = Time.deltaTime * 100 * new Vector3(0, verticalVelocity, 0);
         Vector3 finalPosition = transform.position + moveForwardDirection + moveHorizontallyDirection + moveVerticalDirection;
         Vector3 targetPosition = ValidatePositionIfOutsidePath(finalPosition);
 

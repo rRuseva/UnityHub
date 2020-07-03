@@ -8,12 +8,6 @@ ModelImporter:
     second: Crouch
   externalObjects:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch14_Body
-    second: {fileID: 2132692436553812300, guid: 4eb0a43ea4b400e47b7b503030ed3b7d,
-      type: 3}
-  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Ch14_1001_Diffuse

@@ -103,10 +103,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3069210811541379900, guid: 02769bc378489874ca4e00b02d0048e2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070716980814072868, guid: 02769bc378489874ca4e00b02d0048e2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071323373165957472, guid: 02769bc378489874ca4e00b02d0048e2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3071438225037389186, guid: 02769bc378489874ca4e00b02d0048e2,
         type: 3}
       propertyPath: m_Name
       value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071438225037389186, guid: 02769bc378489874ca4e00b02d0048e2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132264140222880048, guid: 02769bc378489874ca4e00b02d0048e2,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.3240049
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132264140222880048, guid: 02769bc378489874ca4e00b02d0048e2,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.18141048
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132264140222880048, guid: 02769bc378489874ca4e00b02d0048e2,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 4.701708
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132264140222880048, guid: 02769bc378489874ca4e00b02d0048e2,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.058572248
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132264140222880048, guid: 02769bc378489874ca4e00b02d0048e2,
+        type: 3}
+      propertyPath: m_Height
+      value: 13.446584
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02769bc378489874ca4e00b02d0048e2, type: 3}
