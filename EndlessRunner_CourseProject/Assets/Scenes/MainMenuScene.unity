@@ -2570,7 +2570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundOnIcon: {fileID: 5562212378554505292, guid: 2e9cae7c440f6bc419c880054efd309f,
     type: 3}
-  soundOffIcon: {fileID: -3835010291015588846, guid: 2e9cae7c440f6bc419c880054efd309f,
+  soundOffIcon: {fileID: 640075206676796237, guid: 2e9cae7c440f6bc419c880054efd309f,
     type: 3}
 --- !u!1 &1542179336
 GameObject:
