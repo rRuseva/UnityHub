@@ -6,15 +6,9 @@ public class Health : MonoBehaviour {
     public event Action<int> OnHealthChanged;
     public event Action<int> OnDieWithScore;
     public event Action OnDie;
-<<<<<<< HEAD
-    private int health;
-    public CameraShake camShake;
-    [SerializeField] private Score playerScore;
-=======
     private int health = 0;
     public CameraShake camShake = null;
     [SerializeField] private Score playerScore = null;
->>>>>>> courseProjectDev
     private void Start() {
         ChangeHealth(Constants.MAX_HEALTH);
     }
