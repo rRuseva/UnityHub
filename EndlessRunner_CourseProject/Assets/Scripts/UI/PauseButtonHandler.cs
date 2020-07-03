@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PauseButtonHandler : MonoBehaviour {
-    [SerializeField] Sprite pauseIcon;
-    [SerializeField] Sprite playIcon;
-    private Button pauseButton;
-    private Image pauseImage;
+    [SerializeField] Sprite pauseIcon = null;
+    [SerializeField] Sprite playIcon = null;
+    private Button pauseButton = null;
+    private Image pauseImage = null;
     public static event Action<bool> OnPauseStateChanged;
 
     void Start() {

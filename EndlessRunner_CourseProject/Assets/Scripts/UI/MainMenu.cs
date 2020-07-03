@@ -6,11 +6,11 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI maxScoreTMP = null;
-    [SerializeField] private InputField playerName;
-    [SerializeField] private Button playButton;
-    [SerializeField] private Button exitButton;
-    [SerializeField] private UnityEvent playButtonEvent;
-    [SerializeField] private UnityEvent exitButtonEvent;
+    [SerializeField] private InputField playerName = null;
+    [SerializeField] private Button playButton = null;
+    [SerializeField] private Button exitButton = null;
+    [SerializeField] private UnityEvent playButtonEvent = null;
+    [SerializeField] private UnityEvent exitButtonEvent = null;
     private void Start() {
         InitializeMaxScore();
         InitializePlayerName();

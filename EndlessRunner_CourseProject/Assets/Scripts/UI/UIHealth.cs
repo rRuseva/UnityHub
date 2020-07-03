@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public class UIHealth : MonoBehaviour {
-    [SerializeField] private Health playerHealth;
+    [SerializeField] private Health playerHealth = null;
     private TextMeshProUGUI playerHealthTextMesh = null;
 
     private Animator animator;

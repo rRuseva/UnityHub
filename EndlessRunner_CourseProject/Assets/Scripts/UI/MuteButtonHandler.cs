@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 public class MuteButtonHandler : MonoBehaviour {
     public static Action<bool> OnSoundStateChanged;
-    [SerializeField] Sprite soundOnIcon;
-    [SerializeField] Sprite soundOffIcon;
-    private Button muteButton;
-    private Image muteImage;
+    [SerializeField] Sprite soundOnIcon = null;
+    [SerializeField] Sprite soundOffIcon = null;
+    private Button muteButton = null;
+    private Image muteImage = null;
     private readonly Color buttonColor = new Color(0.2039216f, 0.5843138f, 0.2745098f, 1f);
 
     void Start() {

@@ -2,9 +2,9 @@
 using UnityEngine;
 
 public class UIScore : MonoBehaviour {
-    [SerializeField] private Score playerScore;
+    [SerializeField] private Score playerScore = null;
     private TextMeshProUGUI playerScoreTextMesh = null;
-    private Animator animator;
+    private Animator animator = null;
 
     private void Start() {
         playerScore.OnScoreChanged += UpdateScoreInUI;

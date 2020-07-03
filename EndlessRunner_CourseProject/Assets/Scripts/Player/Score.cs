@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Score : MonoBehaviour {
     public event Action<int> OnScoreChanged;
-    [SerializeField] private Health playerHealth;
+    [SerializeField] private Health playerHealth = null;
     private static readonly int minScore = 0;
     public int score {
         get; private set;
