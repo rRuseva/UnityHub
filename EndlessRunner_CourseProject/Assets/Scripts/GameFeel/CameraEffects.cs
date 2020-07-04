@@ -3,7 +3,6 @@
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
 public class CameraEffects : MonoBehaviour {
-    //[SerializeField] private WeaponController weaponController = null;
     [SerializeField] private Health playerHealth = null;
     [SerializeField] private Material sunDownMaterial = null;
     private bool isEnabledSunDownEffect = false;
